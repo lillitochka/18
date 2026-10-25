@@ -1,534 +1,1927 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>З 18-річчям, Софійко! ✨🌸</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-cream: #fbf7f4;
-      --pink-accent: #ff758f;
-      --pink-soft: #ffb3c1;
-      --pink-light: #ffe5ec;
-      --text-main: #6c4f58;
-      --text-dark: #4a3239;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>З 18-річчям!</title>
+<meta name="theme-color" content="#f8dbe6">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap" rel="stylesheet">
 
-    body {
-      background-color: var(--bg-cream);
-      color: var(--text-main);
-      font-family: 'Montserrat', sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      overflow-x: hidden;
-    }
+<style>
+:root{
+  --bg:#fffaf8;
+  --paper:#fffefc;
+  --blush:#fde1ea;
+  --blush2:#f8c7d6;
+  --rose:#f48bab;
+  --hot:#d9487d;
+  --wine:#8d435b;
+  --gold:#d4a45a;
+  --ink:#4f4146;
+  --soft-shadow:0 25px 70px rgba(141,67,91,.12);
+  --card-shadow:0 16px 40px rgba(141,67,91,.10);
+  --radius:34px;
+}
 
-    .canvas-wrapper {
-      max-width: 480px;
-      width: 100%;
-      background-color: #fffaf7;
-      box-shadow: 0 0 30px rgba(0,0,0,0.08);
-      position: relative;
-      padding-bottom: 60px;
-    }
+*{
+  box-sizing:border-box;
+}
 
-    /* Ribbon Banner Top */
-    .top-ribbon {
-      background: var(--pink-accent);
-      color: white;
-      text-align: center;
-      padding: 8px 10px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    /* Section 1: Hero Intro */
-    .hero-section {
-      text-align: center;
-      padding: 40px 20px 20px;
-      position: relative;
-    }
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(252,197,215,.40), transparent 23%),
+    radial-gradient(circle at 85% 8%, rgba(255,231,193,.45), transparent 18%),
+    radial-gradient(circle at 50% 100%, rgba(246,205,218,.22), transparent 25%),
+    var(--bg);
+  overflow-x:hidden;
+}
 
-    .main-title {
-      font-family: 'Caveat', cursive;
-      font-size: 3.8rem;
-      color: var(--pink-accent);
-      line-height: 1;
-      margin-bottom: 5px;
-    }
+img{
+  display:block;
+  max-width:100%;
+}
 
-    .age-badge {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #ff4d6d;
-      background: var(--pink-light);
-      display: inline-block;
-      padding: 6px 22px;
-      border-radius: 30px;
-      margin-bottom: 20px;
-      border: 2px dashed var(--pink-accent);
-    }
+.page{
+  position:relative;
+  overflow:hidden;
+}
 
-    .hero-img-box {
-      position: relative;
-      width: 220px;
-      height: 270px;
-      margin: 0 auto 20px;
-      border-radius: 120px 120px 20px 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(255, 117, 143, 0.25);
-      border: 5px solid white;
-    }
+.wrap{
+  width:min(1180px, calc(100% - 28px));
+  margin:0 auto;
+}
 
-    .hero-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.section{
+  padding:22px 0;
+}
 
-    .sticker-star {
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      font-size: 2rem;
-      animation: float 3s ease-in-out infinite;
-    }
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .7s ease, transform .7s ease;
+}
 
-    .sticker-heart {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 2.2rem;
-      animation: float 4s ease-in-out infinite reverse;
-    }
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(10deg); }
-    }
+/* ШАРИКИ */
+.floating-balloon{
+  position:absolute;
+  width:92px;
+  height:118px;
+  border-radius:50% 50% 48% 48%;
+  background:linear-gradient(
+    145deg,
+    #ffdbe7 0%,
+    #f9a9c1 52%,
+    #e66d95 100%
+  );
+  box-shadow:
+    inset -16px -18px 24px rgba(149,58,89,.16),
+    inset 14px 10px 18px rgba(255,255,255,.50),
+    0 14px 25px rgba(222,113,151,.16);
+  animation:float 8s ease-in-out infinite;
+  z-index:0;
+  opacity:.68;
+}
 
-    /* Section 2: Film Strip Carousel */
-    .film-section {
-      margin: 30px 0;
-      background: #2b2b2b;
-      padding: 20px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      overflow: hidden;
-      position: relative;
-    }
+.floating-balloon::before{
+  content:'';
+  position:absolute;
+  width:18px;
+  height:18px;
+  left:50%;
+  bottom:-7px;
+  transform:translateX(-50%) rotate(45deg);
+  background:#ef96b3;
+  border-radius:3px;
+}
 
-    .film-title {
-      color: #fff;
-      text-align: center;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
+.floating-balloon::after{
+  content:'';
+  position:absolute;
+  width:1.5px;
+  height:120px;
+  background:rgba(194,149,161,.8);
+  left:50%;
+  top:110px;
+}
 
-    .film-track-wrapper {
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-    }
+.bal1{
+  top:110px;
+  left:-20px;
+  animation-delay:-1s;
+}
 
-    .film-track {
-      display: flex;
-      gap: 15px;
-      animation: scrollFilm 25s linear infinite;
-    }
+.bal2{
+  top:620px;
+  right:-18px;
+  width:80px;
+  height:104px;
+  animation-delay:-3s;
+}
 
-    @keyframes scrollFilm {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+.bal3{
+  top:1450px;
+  left:2vw;
+  width:72px;
+  height:92px;
+  animation-delay:-2s;
+}
 
-    .film-frame {
-      width: 130px;
-      height: 160px;
-      background: white;
-      padding: 8px 8px 25px 8px;
-      flex-shrink: 0;
-      border-radius: 4px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      position: relative;
-    }
+.bal4{
+  top:2320px;
+  right:5vw;
+  width:110px;
+  height:136px;
+  animation-delay:-5s;
+}
 
-    .film-frame img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 2px;
-    }
+.bal5{
+  top:3200px;
+  left:-10px;
+  width:84px;
+  height:108px;
+  animation-delay:-4.5s;
+}
 
-    .film-frame span {
-      font-size: 0.75rem;
-      color: #555;
-      font-weight: 600;
-      display: block;
-      text-align: center;
-      margin-top: 5px;
-    }
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-18px);
+  }
+}
 
-    /* Section 3: Vinyl Player */
-    .music-section {
-      background: #fff;
-      margin: 20px;
-      padding: 25px;
-      border-radius: 25px;
-      border: 3px solid var(--pink-light);
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(255, 179, 193, 0.2);
-    }
+/* HERO */
+.hero{
+  position:relative;
+  padding:30px 0 34px;
+}
 
-    .vinyl-container {
-      width: 150px;
-      height: 150px;
-      margin: 15px auto;
-      position: relative;
-      cursor: pointer;
-    }
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 0 18px;
+}
 
-    .vinyl-disc {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: radial-gradient(circle, #222 18%, #111 20%, #111 40%, #222 41%, #111 60%, var(--pink-accent) 61%, var(--pink-accent) 100%);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  font-size:12px;
+  text-transform:uppercase;
+  color:#a66d81;
+}
 
-    .vinyl-center {
-      width: 45px;
-      height: 45px;
-      background: white;
-      border-radius: 50%;
-      border: 3px solid var(--pink-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
+.brand-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--rose),#ffd38b);
+}
 
-    .spinning {
-      animation: spinVinyl 3.5s linear infinite;
-    }
+.badge{
+  border:1px solid rgba(212,164,90,.35);
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(8px);
+  font-size:12px;
+  font-weight:700;
+  color:#9a7080;
+}
 
-    @keyframes spinVinyl {
-      100% { transform: rotate(360deg); }
-    }
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:22px;
+  align-items:start;
+}
 
-    /* Section 4: Lace Frame (Doily) like Reference Image */
-    .lace-card {
-      margin: 25px 20px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px 20px;
-      position: relative;
-      border: 10px solid #fff5f7;
-      outline: 2px dashed var(--pink-soft);
-      text-align: center;
-    }
+.hero-copy{
+  position:relative;
+  z-index:1;
+  padding-top:20px;
+}
 
-    .lace-title {
-      font-family: 'Caveat', cursive;
-      font-size: 2.8rem;
-      color: var(--pink-accent);
-      margin-bottom: 10px;
-    }
+.overline{
+  font-size:12px;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:#b17c89;
+  margin-bottom:18px;
+}
 
-    .lace-time {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--text-dark);
-      background: var(--pink-light);
-      display: inline-block;
-      padding: 5px 20px;
-      border-radius: 20px;
-      margin-bottom: 15px;
-    }
+.title{
+  margin:0;
+  font-size:clamp(52px, 9vw, 92px);
+  line-height:.88;
+  letter-spacing:-.04em;
+  color:var(--hot);
+  font-weight:800;
+}
 
-    .lace-text {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-main);
-    }
+.script{
+  font-family:'Marck Script',cursive;
+  color:#bf4f76;
+  font-weight:400;
+  font-size:clamp(48px, 8vw, 76px);
+  line-height:.95;
+}
 
-    /* Section 5: Interactive Secret Cards */
-    .secrets-section {
-      padding: 20px;
-    }
+.subtitle{
+  margin:20px 0 0;
+  max-width:560px;
+  font-size:17px;
+  line-height:1.8;
+  color:#6d5a62;
+}
 
-    .sec-title {
-      text-align: center;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--pink-accent);
-      margin-bottom: 15px;
-    }
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
 
-    .secret-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+.chip{
+  padding:12px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(230,140,172,.28);
+  box-shadow:0 8px 24px rgba(141,67,91,.08);
+  font-size:14px;
+  font-weight:700;
+  color:#865869;
+}
 
-    .secret-card {
-      background: white;
-      border: 2px solid var(--pink-light);
-      border-radius: 18px;
-      padding: 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    }
+.hero-card{
+  position:relative;
+  border-radius:42px;
+  overflow:hidden;
+  min-height:720px;
+  box-shadow:var(--soft-shadow);
+  background:#f3d7df;
+}
 
-    .secret-card:hover {
-      transform: scale(1.03);
-      border-color: var(--pink-accent);
-    }
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  filter:saturate(1.02) contrast(1.02);
+}
 
-    .secret-icon {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
+.hero-glass{
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  background:rgba(255,255,255,.68);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:30px;
+  padding:18px 18px 16px;
+  box-shadow:0 12px 30px rgba(68,32,43,.10);
+}
 
-    .secret-text {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
+.hero-glass strong{
+  display:block;
+  font-size:28px;
+  line-height:1.05;
+  color:#c93f73;
+}
 
-    .secret-hidden {
-      display: none;
-      font-size: 0.8rem;
-      color: var(--pink-accent);
-      margin-top: 8px;
-      font-weight: 500;
-    }
+.hero-glass span{
+  display:block;
+  margin-top:8px;
+  font-size:14px;
+  line-height:1.6;
+  color:#6f5f64;
+}
 
-    /* Section 6: Wishlist / Dress code */
-    .details-box {
-      background: var(--pink-light);
-      margin: 20px;
-      padding: 20px;
-      border-radius: 20px;
-      text-align: center;
-    }
+.mini-tag{
+  position:absolute;
+  top:16px;
+  right:16px;
+  padding:12px 14px;
+  border-radius:22px;
+  background:rgba(255,250,251,.9);
+  box-shadow:var(--card-shadow);
+  font-size:13px;
+  font-weight:800;
+  color:#a65a76;
+  transform:rotate(4deg);
+}
 
-    .details-box h3 {
-      color: var(--pink-accent);
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
+.sticker{
+  position:absolute;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ffe7ef,#ffd8c7);
+  color:#be4d77;
+  border:1px solid rgba(255,255,255,.65);
+  box-shadow:0 15px 40px rgba(165,82,113,.14);
+}
 
-    .details-box p {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
+.sticker.one{
+  width:122px;
+  height:122px;
+  border-radius:38px;
+  left:-18px;
+  bottom:130px;
+  transform:rotate(-12deg);
+  font-size:20px;
+  font-weight:800;
+  line-height:1.1;
+  text-align:center;
+  padding:10px;
+}
 
-    .wishlist-btn {
-      background: var(--pink-accent);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 117, 143, 0.4);
-    }
+.sticker.two{
+  width:150px;
+  height:76px;
+  border-radius:26px;
+  left:180px;
+  bottom:-10px;
+  transform:rotate(-6deg);
+  font-size:16px;
+  font-weight:700;
+  padding:10px 14px;
+  text-align:center;
+}
 
-    /* Footer Promo */
-    .cta-footer {
-      margin: 30px 20px 0;
-      background: linear-gradient(135deg, #ff758f 0%, #ffb3c1 100%);
-      border-radius: 25px;
-      padding: 25px 20px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 10px 25px rgba(255, 117, 143, 0.4);
-    }
+/* РЕДАКЦИОННЫЙ БЛОК */
+.editorial{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:22px;
+}
 
-    .cta-footer h4 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
+.card{
+  position:relative;
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:var(--card-shadow);
+  overflow:hidden;
+}
 
-    .cta-footer p {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      opacity: 0.95;
-    }
+.editorial-left{
+  padding:28px;
+}
 
-    .cta-btn {
-      display: inline-block;
-      background: white;
-      color: var(--pink-accent);
-      font-weight: 800;
-      padding: 12px 26px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-  </style>
+.note{
+  display:inline-block;
+  background:linear-gradient(135deg,#fff3f7,#ffe0e8);
+  color:#bd4b75;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.editorial-left h2{
+  margin:16px 0 10px;
+  font-size:clamp(34px,5vw,54px);
+  line-height:.95;
+  color:var(--wine);
+}
+
+.editorial-left p{
+  font-size:16px;
+  line-height:1.85;
+  color:#695a5f;
+  margin:0 0 20px;
+}
+
+.list{
+  display:grid;
+  gap:10px;
+  margin-top:16px;
+}
+
+.list-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff,#fff8fb);
+}
+
+.list-item .emoji{
+  font-size:22px;
+  line-height:1;
+}
+
+.list-item b{
+  display:block;
+  margin-bottom:4px;
+  color:#925168;
+}
+
+.list-item span{
+  font-size:14px;
+  color:#6e6064;
+  line-height:1.6;
+}
+
+.editorial-right{
+  padding:14px;
+}
+
+.editorial-photo{
+  height:100%;
+  min-height:540px;
+  position:relative;
+  border-radius:28px;
+  overflow:hidden;
+}
+
+.editorial-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.tilt{
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:170px;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:14px 14px 16px;
+  box-shadow:0 14px 35px rgba(74,32,46,.12);
+  transform:rotate(5deg);
+}
+
+.tilt .small{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#b27a89;
+  font-weight:800;
+}
+
+.tilt strong{
+  display:block;
+  margin-top:7px;
+  font-size:18px;
+  color:#b74073;
+  line-height:1.25;
+}
+
+.tilt p{
+  margin:8px 0 0;
+  font-size:13px;
+  line-height:1.6;
+  color:#6e6065;
+}
+
+/* ЗАГОЛОВКИ */
+.heading-center{
+  text-align:center;
+  padding:18px 0 6px;
+}
+
+.heading-center .eyebrow{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:800;
+  color:#b17d8a;
+}
+
+.heading-center h2{
+  margin:14px 0 0;
+  font-size:clamp(34px,6vw,60px);
+  line-height:1;
+  color:var(--hot);
+}
+
+.heading-center .script2{
+  font-family:'Marck Script',cursive;
+  color:#91506a;
+  font-size:clamp(36px,5vw,54px);
+  font-weight:400;
+}
+
+/* ФОТОПЛЁНКА */
+.film-section{
+  padding-top:10px;
+}
+
+.film{
+  margin-top:22px;
+  background:#231a1d;
+  border-radius:34px;
+  padding:18px 18px 24px;
+  box-shadow:var(--soft-shadow);
+}
+
+.film-strip{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(220px,1fr));
+  gap:14px;
+  overflow:auto;
+  padding-bottom:4px;
+}
+
+.film-frame{
+  min-width:220px;
+  background:#111;
+  border-radius:24px;
+  padding:12px;
+  position:relative;
+  box-shadow:0 10px 28px rgba(0,0,0,.25);
+}
+
+.film-frame::before,
+.film-frame::after{
+  content:'';
+  position:absolute;
+  left:10px;
+  right:10px;
+  height:10px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 12px,
+      rgba(255,255,255,.9) 12px 24px
+    );
+  opacity:.9;
+  border-radius:3px;
+}
+
+.film-frame::before{
+  top:8px;
+}
+
+.film-frame::after{
+  bottom:8px;
+}
+
+.film-frame .inner{
+  border-radius:18px;
+  overflow:hidden;
+  height:350px;
+  background:#333;
+  margin:18px 0;
+}
+
+.film-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.frame-cap{
+  color:#f7dce5;
+  font-size:13px;
+  line-height:1.6;
+  padding:0 2px 2px;
+}
+
+/* PINTEREST КОЛЛАЖ */
+.collage{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.pin{
+  background:#fff;
+  border-radius:30px;
+  padding:12px;
+  box-shadow:var(--card-shadow);
+}
+
+.pin img{
+  border-radius:24px;
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+.pin h3{
+  margin:14px 8px 6px;
+  font-size:20px;
+  color:#99536b;
+}
+
+.pin p{
+  margin:0 8px 10px;
+  font-size:14px;
+  line-height:1.7;
+  color:#736268;
+}
+
+.pin.tall img{
+  height:560px;
+}
+
+.pin.short img{
+  height:300px;
+}
+
+/* ПОЖЕЛАНИЯ */
+.quote-block{
+  margin-top:18px;
+  padding:34px 28px;
+  border-radius:36px;
+  background:linear-gradient(135deg,#fff3f7,#fff8ef);
+  box-shadow:var(--card-shadow);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px;
+  align-items:center;
+}
+
+.quote-block h3{
+  margin:0 0 14px;
+  font-size:clamp(32px,5vw,52px);
+  line-height:.98;
+  color:#c24173;
+}
+
+.quote-block p{
+  margin:0;
+  font-size:17px;
+  line-height:1.85;
+  color:#6d5d62;
+}
+
+.quote-card{
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(14px);
+  border-radius:28px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.58);
+}
+
+.quote-card .caption{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#b38490;
+  font-weight:800;
+}
+
+.quote-card ul{
+  padding:0;
+  margin:14px 0 0;
+  list-style:none;
+  display:grid;
+  gap:12px;
+}
+
+.quote-card li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:14px;
+  line-height:1.55;
+  color:#6e5e63;
+}
+
+.quote-card li span:first-child{
+  font-size:18px;
+  line-height:1;
+}
+
+/* ГАЛЕРЕЯ */
+.gallery-wrap{
+  padding-top:8px;
+}
+
+.gallery{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:20px;
+}
+
+.gallery-main{
+  height:710px;
+  border-radius:36px;
+  overflow:hidden;
+  box-shadow:var(--soft-shadow);
+}
+
+.gallery-main img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.gallery-side{
+  display:grid;
+  gap:20px;
+}
+
+.gallery-side .cardimg{
+  height:345px;
+  border-radius:36px;
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+}
+
+.gallery-side .cardimg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.overlay-label{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  right:16px;
+  border-radius:22px;
+  padding:14px 16px;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  font-weight:700;
+  color:#7f5864;
+  line-height:1.55;
+}
+
+/* КАРТОЧКИ */
+.wishes-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.wish{
+  padding:20px 18px;
+  border-radius:28px;
+  background:#fff;
+  box-shadow:var(--card-shadow);
+  text-align:center;
+}
+
+.wish .ico{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.wish h4{
+  margin:0 0 8px;
+  font-size:18px;
+  color:#9b5270;
+}
+
+.wish p{
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+  color:#6f6266;
+}
+
+/* ФИНАЛ */
+.finale{
+  margin:28px auto 40px;
+  position:relative;
+  border-radius:42px;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      125deg,
+      rgba(255,239,244,.95),
+      rgba(255,248,240,.95)
+    );
+  box-shadow:var(--soft-shadow);
+}
+
+.finale-grid{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:0;
+  align-items:stretch;
+}
+
+.finale-photo{
+  min-height:560px;
+  position:relative;
+}
+
+.finale-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.finale-copy{
+  padding:44px 34px 36px;
+}
+
+.finale-copy .eyebrow{
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#b48390;
+  font-weight:800;
+}
+
+.finale-copy h2{
+  margin:16px 0 14px;
+  font-size:clamp(34px,5vw,58px);
+  line-height:.95;
+  color:#c53d72;
+}
+
+.finale-copy p{
+  margin:0 0 22px;
+  font-size:16px;
+  line-height:1.85;
+  color:#6c5c62;
+}
+
+.pill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0 26px;
+}
+
+.pill{
+  padding:11px 14px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(141,67,91,.08);
+  font-size:13px;
+  font-weight:700;
+  color:#8a586a;
+}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:17px 22px;
+  border:none;
+  cursor:pointer;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ef7ca3,#cf3d71);
+  color:#fff;
+  font-weight:800;
+  box-shadow:0 16px 34px rgba(207,61,113,.28);
+  font-size:15px;
+}
+
+.cta:active{
+  transform:translateY(1px);
+}
+
+.footer{
+  text-align:center;
+  padding:10px 0 34px;
+  color:#9c8790;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.footer strong{
+  color:#8a5f6d;
+}
+
+/* МАГИЯ */
+.sparkles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:60;
+  overflow:hidden;
+}
+
+.sparkles span{
+  position:absolute;
+  opacity:0;
+  transform:translateY(0) scale(.5);
+  transition:
+    transform 1.25s cubic-bezier(.17,.84,.21,1),
+    opacity 1.25s ease;
+  font-size:22px;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width:1000px){
+
+  .hero-grid,
+  .editorial,
+  .quote-block,
+  .gallery,
+  .finale-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-card{
+    min-height:640px;
+  }
+
+  .editorial-photo{
+    min-height:420px;
+  }
+
+  .gallery-main{
+    height:520px;
+  }
+
+  .collage{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:720px){
+
+  .wrap{
+    width:min(100% - 18px,1180px);
+  }
+
+  .hero{
+    padding-top:12px;
+  }
+
+  .title{
+    font-size:52px;
+  }
+
+  .script{
+    font-size:48px;
+  }
+
+  .subtitle{
+    font-size:15px;
+  }
+
+  .hero-card{
+    min-height:520px;
+    border-radius:30px;
+  }
+
+  .hero-glass strong{
+    font-size:24px;
+  }
+
+  .section{
+    padding:14px 0;
+  }
+
+  .editorial-left,
+  .finale-copy{
+    padding:24px 18px;
+  }
+
+  .editorial-right{
+    padding:10px;
+  }
+
+  .editorial-photo{
+    min-height:360px;
+  }
+
+  .quote-block{
+    padding:26px 18px;
+  }
+
+  .wishes-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .collage{
+    grid-template-columns:1fr;
+  }
+
+  .pin img,
+  .pin.tall img,
+  .pin.short img{
+    height:360px;
+  }
+
+  .film-strip{
+    grid-template-columns:repeat(5,76vw);
+  }
+
+  .film-frame{
+    min-width:76vw;
+  }
+
+  .film-frame .inner{
+    height:300px;
+  }
+
+  .gallery-main{
+    height:430px;
+  }
+
+  .gallery-side .cardimg{
+    height:260px;
+  }
+
+  .finale-photo{
+    min-height:380px;
+  }
+
+  .floating-balloon{
+    opacity:.42;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="canvas-wrapper">
-    
-    <div class="top-ribbon">✨ ОСОБЛИВИЙ ДЕНЬ НАРOДЖЕННЯ ✨</div>
+<div class="page">
 
-    <!-- Hero Intro -->
-    <section class="hero-section">
-      <div class="sticker-star">⭐</div>
-      <div class="sticker-heart">💖</div>
-      <h1 class="main-title">Софійка</h1>
-      <div class="age-badge">18 РОКІВ! 🎂</div>
-      
-      <div class="hero-img-box">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Софія">
-      </div>
-      <p style="font-size: 0.95rem; font-weight: 500; color: #7a5c65;">
-        Вітаємо найчарівнішу дівчину з повноліттям! ✨🌸
-      </p>
-    </section>
+<div class="floating-balloon bal1"></div>
+<div class="floating-balloon bal2"></div>
+<div class="floating-balloon bal3"></div>
+<div class="floating-balloon bal4"></div>
+<div class="floating-balloon bal5"></div>
 
-    <!-- Film Strip -->
-    <section class="film-section">
-      <div class="film-title">🎞 Наші найкращі спогади 🎞</div>
-      <div class="film-track-wrapper">
-        <div class="film-track" id="filmTrack">
-          <!-- 10 Photo Frames -->
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" alt="Фото"><span>Момент #1</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" alt="Фото"><span>Усмішка 💖</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80" alt="Фото"><span>Прогулянка 🌿</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Фото"><span>Найкращі подруги</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80" alt="Фото"><span>Незабутньо ✨</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&q=80" alt="Фото"><span>Свято 🎈</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&q=80" alt="Фото"><span>Квіти 💐</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=400&q=80" alt="Фото"><span>Разом завжди</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&q=80" alt="Фото"><span>Затишок ✨</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80" alt="Фото"><span>Тортик 🍰</span></div>
-          
-          <!-- Duplicate for seamless scroll loop -->
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" alt="Фото"><span>Момент #1</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" alt="Фото"><span>Усмішка 💖</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80" alt="Фото"><span>Прогулянка 🌿</span></div>
-          <div class="film-frame"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Фото"><span>Найкращі подруги</span></div>
-        </div>
-      </div>
-    </section>
+<div class="sparkles" id="sparkles"></div>
 
-    <!-- Vinyl Player -->
-    <section class="music-section">
-      <h3 style="font-size: 1.1rem; color: var(--pink-accent);">🎵 Музична платівка Софії</h3>
-      <div class="vinyl-container" onclick="toggleMusic()">
-        <div class="vinyl-disc" id="vinyl">
-          <div class="vinyl-center">💿</div>
-        </div>
-      </div>
-      <p id="musicStatus" style="font-size: 0.85rem; color: #888;">Натисни на диск, щоб увімкнути атмосферу 🎶</p>
-      <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-love-111578.mp3" type="audio/mpeg">
-      </audio>
-    </section>
+<section class="hero">
 
-    <!-- Lace Frame (Reference Style) -->
-    <section class="lace-card">
-      <h2 class="lace-title">Початок свята</h2>
-      <div class="lace-time">19:30</div>
-      <p class="lace-text">
-        Дорога Софійко! Бажаємо тобі нескінченного щастя, натхнення та здійснення найсміливіших мрій. Нехай це 18-річчя стане найяскравішим моментом твоєї юності! 🥂✨
-      </p>
-    </section>
+<div class="wrap">
 
-    <!-- Interactive Cards -->
-    <section class="secrets-section">
-      <div class="sec-title">💌 Відкрий послання:</div>
-      <div class="secret-grid">
-        <div class="secret-card" onclick="openSecret(this)">
-          <div class="secret-icon">🎁</div>
-          <div class="secret-text">Побажання #1</div>
-          <div class="secret-hidden">Завжди сяй як зірочка! ⭐</div>
-        </div>
-        <div class="secret-card" onclick="openSecret(this)">
-          <div class="secret-icon">🎀</div>
-          <div class="secret-text">Побажання #2</div>
-          <div class="secret-hidden">Вірних та щирих друзів! 👭</div>
-        </div>
-        <div class="secret-card" onclick="openSecret(this)">
-          <div class="secret-icon">🍰</div>
-          <div class="secret-text">Побажання #3</div>
-          <div class="secret-hidden">Солодкого та легкого життя! ✨</div>
-        </div>
-        <div class="secret-card" onclick="openSecret(this)">
-          <div class="secret-icon">✈️</div>
-          <div class="secret-text">Побажання #4</div>
-          <div class="secret-hidden">Мільйон незабутніх подорожей! 🌍</div>
-        </div>
-      </div>
-    </section>
+<div class="topbar reveal">
 
-    <!-- Details Box -->
-    <section class="details-box">
-      <h3>👗 ДРЕС-КОД ТА ДЕТАЛІ</h3>
-      <p>Дрес-код: ніжні рожеві, пастельні чи бежеві відтінки! Приходь у тому, в чому почуваєшся найкрасивішою ✨</p>
-      <button class="wishlist-btn" onclick="alert('Вітаємо! Ви переглянули вішлист Софійки 💕')">Переглянути вишлист 🎁</button>
-    </section>
+<div class="brand">
+<span class="brand-dot"></span>
+birthday story
+</div>
 
-    <!-- Footer CTA -->
-    <section class="cta-footer">
-      <h4>Хочеш такий самий сайт? 🌸</h4>
-      <p>Замовляй свій персональний сайт-подарунок з промокодом <b>kvit-50</b> та отримуй знижку 50 грн!</p>
-      <a href="https://kvisite.com" target="_blank" class="cta-btn">Замовити на kvisite ✨</a>
-    </section>
+<div class="badge">
+18 років ✦ особливий день
+</div>
 
-  </div>
+</div>
 
-  <script>
-    const audio = document.getElementById('bgMusic');
-    const vinyl = document.getElementById('vinyl');
-    const statusText = document.getElementById('musicStatus');
-    let isPlaying = false;
+<div class="hero-grid">
 
-    function toggleMusic() {
-      if (isPlaying) {
-        audio.pause();
-        vinyl.classList.remove('spinning');
-        statusText.innerText = 'Натисни на диск, щоб увімкнути атмосферу 🎶';
-      } else {
-        audio.play();
-        vinyl.classList.add('spinning');
-        statusText.innerText = 'Грає музика... ✨ (Натисни ще раз, щоб зупинити)';
-      }
-      isPlaying = !isPlaying;
-    }
+<div class="hero-copy reveal">
 
-    function openSecret(card) {
-      const hidden = card.querySelector('.secret-hidden');
-      if (hidden.style.display === 'block') {
-        hidden.style.display = 'none';
-      } else {
-        hidden.style.display = 'block';
-      }
-    }
-  </script>
+<div class="overline">
+сьогодні твій день
+</div>
+
+<h1 class="title">
+З Днем
+<br>
+<span class="script">народження!</span>
+</h1>
+
+<p class="subtitle">
+Нехай сьогодні навколо буде багато усмішок,
+квітів, красивих слів, фотографій,
+теплих обіймів і моментів,
+які хочеться запам'ятати назавжди.
+</p>
+
+<div class="chips">
+
+<div class="chip">
+🎈 18 років
+</div>
+
+<div class="chip">
+🕶️ святковий настрій
+</div>
+
+<div class="chip">
+🎞️ фотоплівка
+</div>
+
+<div class="chip">
+✨ Pinterest vibe
+</div>
+
+</div>
+
+<div class="editorial reveal">
+
+<div class="card editorial-left">
+
+<span class="note">
+для особливого дня
+</span>
+
+<h2>
+Нехай цей день
+<br>
+буде дуже
+<br>
+красивим
+</h2>
+
+<p>
+Вісімнадцять — це про свободу,
+нові мрії, сміливість бути собою
+і той особливий вік,
+коли попереду цілий світ.
+</p>
+
+<div class="list">
+
+<div class="list-item">
+
+<div class="emoji">
+💖
+</div>
+
+<div>
+<b>Щасливих моментів</b>
+<span>
+Більше сміху, теплих обіймів
+і людей, поруч з якими затишно.
+</span>
+</div>
+
+</div>
+
+<div class="list-item">
+
+<div class="emoji">
+🌷
+</div>
+
+<div>
+<b>Ніжності та краси</b>
+<span>
+Нехай кожен день буде легким,
+естетичним і по-особливому твоїм.
+</span>
+</div>
+
+</div>
+
+<div class="list-item">
+
+<div class="emoji">
+⭐
+</div>
+
+<div>
+<b>Мрій без меж</b>
+<span>
+Іди за своїм світлом
+і не бійся бажати великого.
+</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card editorial-right">
+
+<div class="editorial-photo">
+
+<img
+src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Дівчина святкує 18 років"
+>
+
+<div class="tilt">
+
+<div class="small">
+birthday mood
+</div>
+
+<strong>
+Кульки,
+торт,
+красиві фото
+та найкращий настрій
+</strong>
+
+<p>
+Сьогодні можна бути
+найяскравішою версією себе.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-card reveal">
+
+<span class="mini-tag">
+головна героїня ✦
+</span>
+
+<img
+src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Дівчина у сонцезахисних окулярах з кульками 18"
+>
+
+<div class="hero-glass">
+
+<strong>
+Її день.
+Її стиль.
+Її 18.
+</strong>
+
+<span>
+Красива, яскрава,
+усміхнена —
+саме так починається це свято.
+</span>
+
+</div>
+
+<div class="sticker one">
+happy
+<br>
+birthday
+<br>
+girlie
+</div>
+
+<div class="sticker two">
+сьогодні можна
+все ✦
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section film-section">
+
+<div class="wrap">
+
+<div class="heading-center reveal">
+
+<div class="eyebrow">
+спогади у кадрах
+</div>
+
+<h2>
+Святкова
+<span class="script2">
+фотоплівка
+</span>
+</h2>
+
+</div>
+
+<div class="film reveal">
+
+<div class="film-strip">
+
+<div class="film-frame">
+
+<div class="inner">
+
+<img
+src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="frame-cap">
+Стиль, окуляри та
+великі кульки «18».
+</div>
+
+</div>
+
+<div class="film-frame">
+
+<div class="inner">
+
+<img
+src="https://images.pexels.com/photos/19460478/pexels-photo-19460478.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="frame-cap">
+Свічки, торт
+і трохи кіношного настрою.
+</div>
+
+</div>
+
+<div class="film-frame">
+
+<div class="inner">
+
+<img
+src="https://images.pexels.com/photos/16359061/pexels-photo-16359061.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="frame-cap">
+Грайливість,
+характер і легкість.
+</div>
+
+</div>
+
+<div class="film-frame">
+
+<div class="inner">
+
+<img
+src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="frame-cap">
+Поруч ті,
+з ким хочеться святкувати.
+</div>
+
+</div>
+
+<div class="film-frame">
+
+<div class="inner">
+
+<img
+src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="frame-cap">
+Довгі фото
+та справжній Pinterest mood.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="collage reveal">
+
+<article class="pin tall">
+
+<img
+src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1000"
+alt=""
+>
+
+<h3>
+18 — це початок чогось прекрасного
+</h3>
+
+<p>
+Нехай у серці буде спокій,
+а в очах — вогники мрій,
+натхнення та щирої радості.
+</p>
+
+</article>
+
+<article class="pin">
+
+<img
+src="https://images.pexels.com/photos/25003958/pexels-photo-25003958.jpeg?auto=compress&cs=tinysrgb&w=1000"
+alt=""
+>
+
+<h3>
+Святковий вайб
+</h3>
+
+<p>
+Кульки, красивий декор,
+ніжні кольори
+і атмосфера,
+від якої тепло.
+</p>
+
+</article>
+
+<article class="pin short">
+
+<img
+src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=1000"
+alt=""
+>
+
+<h3>
+Поруч — найкращі люди
+</h3>
+
+<p>
+Нехай цей рік буде
+наповнений дружбою,
+підтримкою і щасливими зустрічами.
+</p>
+
+</article>
+
+</div>
+
+<div class="quote-block reveal">
+
+<div>
+
+<h3>
+Для тебе —
+найтепліші побажання
+</h3>
+
+<p>
+Нехай у 18 років життя
+дарує красиві емоції,
+сміливі мрії,
+натхнення,
+любов і моменти,
+які хочеться згадувати
+з усмішкою.
+</p>
+
+</div>
+
+<div class="quote-card">
+
+<div class="caption">
+маленький список великого щастя
+</div>
+
+<ul>
+
+<li>
+<span>♡</span>
+<span>
+щоб серце завжди вибирало
+світло, добро й любов
+</span>
+</li>
+
+<li>
+<span>✦</span>
+<span>
+щоб бажання збувалися красиво,
+а мрії росли разом з тобою
+</span>
+</li>
+
+<li>
+<span>🎀</span>
+<span>
+щоб кожен день
+приносив натхнення
+</span>
+</li>
+
+<li>
+<span>🌟</span>
+<span>
+щоб ти завжди відчувала себе
+особливою і щасливою
+</span>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section gallery-wrap">
+
+<div class="wrap">
+
+<div class="heading-center reveal">
+
+<div class="eyebrow">
+велика галерея
+</div>
+
+<h2>
+Ще більше
+<span class="script2">
+краси
+</span>
+</h2>
+
+</div>
+
+<div class="gallery reveal">
+
+<div
+class="gallery-main"
+style="position:relative"
+>
+
+<img
+src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt=""
+>
+
+<div class="overlay-label">
+Нехай попереду буде
+багато красивих доріг,
+сміливих рішень
+і днів,
+коли хочеться сказати:
+«Я щаслива».
+</div>
+
+</div>
+
+<div class="gallery-side">
+
+<div class="cardimg">
+
+<img
+src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+<div class="cardimg">
+
+<img
+src="https://images.pexels.com/photos/19460478/pexels-photo-19460478.jpeg?auto=compress&cs=tinysrgb&w=900"
+alt=""
+>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="wishes-grid reveal">
+
+<div class="wish">
+
+<div class="ico">
+💗
+</div>
+
+<h4>
+Щастя
+</h4>
+
+<p>
+Щоб його було багато,
+щиро й по-справжньому.
+</p>
+
+</div>
+
+<div class="wish">
+
+<div class="ico">
+✨
+</div>
+
+<h4>
+Натхнення
+</h4>
+
+<p>
+Для нових мрій,
+ідей та улюблених справ.
+</p>
+
+</div>
+
+<div class="wish">
+
+<div class="ico">
+🌸
+</div>
+
+<h4>
+Ніжність
+</h4>
+
+<p>
+До себе,
+свого шляху
+та всього,
+що любиш.
+</p>
+
+</div>
+
+<div class="wish">
+
+<div class="ico">
+🎉
+</div>
+
+<h4>
+Святковий настрій
+</h4>
+
+<p>
+Не лише сьогодні,
+а й у кожному новому дні.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="wrap">
+
+<div class="finale reveal">
+
+<div class="finale-grid">
+
+<div class="finale-photo">
+
+<img
+src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt=""
+>
+
+</div>
+
+<div class="finale-copy">
+
+<div class="eyebrow">
+фінальний акорд
+</div>
+
+<h2>
+Нехай твої 18
+<br>
+будуть незабутніми
+</h2>
+
+<p>
+Бажаю, щоб цей день
+був наповнений
+компліментами,
+квітами,
+теплом,
+сміхом,
+красивими фото,
+обіймами
+та відчуттям,
+що попереду —
+дуже щаслива історія.
+</p>
+
+<div class="pill-row">
+
+<span class="pill">
+🎈 легкість
+</span>
+
+<span class="pill">
+🌷 краса
+</span>
+
+<span class="pill">
+💌 любов
+</span>
+
+<span class="pill">
+⭐ мрії
+</span>
+
+<span class="pill">
+🕊️ свобода
+</span>
+
+</div>
+
+<button
+class="cta"
+onclick="makeMagic()"
+>
+Натисни для святкової магії ✨
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+З любов'ю для особливого 18-річчя ♡
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+const observer =
+new IntersectionObserver(
+(entries) => {
+
+entries.forEach((entry, i) => {
+
+if(entry.isIntersecting){
+
+setTimeout(
+() => entry.target.classList.add('visible'),
+i * 60
+);
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+document
+.querySelectorAll('.reveal')
+.forEach(
+el => observer.observe(el)
+);
+
+
+const sparkleLayer =
+document.getElementById('sparkles');
+
+
+function makeMagic(){
+
+const icons = [
+'♡',
+'✦',
+'✧',
+'💖',
+'🎀',
+'✨',
+'🌸'
+];
+
+const colors = [
+'#d9487d',
+'#f48bab',
+'#d4a45a',
+'#e97fa0',
+'#c85f86'
+];
+
+for(let i=0;i<42;i++){
+
+const s =
+document.createElement('span');
+
+s.textContent =
+icons[
+Math.floor(
+Math.random()*icons.length
+)
+];
+
+s.style.left =
+(46 + Math.random()*8)
++ 'vw';
+
+s.style.top =
+(70 + Math.random()*10)
++ 'vh';
+
+s.style.fontSize =
+(18 + Math.random()*18)
++ 'px';
+
+s.style.color =
+colors[
+Math.floor(
+Math.random()*colors.length
+)
+];
+
+sparkleLayer.appendChild(s);
+
+requestAnimationFrame(
+() =>
+requestAnimationFrame(
+() => {
+
+const dx =
+(Math.random() - 0.5) * 440;
+
+const dy =
+-180 - Math.random() * 360;
+
+const rot =
+Math.random() * 580;
+
+const sc =
+0.7 + Math.random() * 1.1;
+
+s.style.opacity='1';
+
+s.style.transform =
+'translate('
++ dx
++ 'px,'
++ dy
++ 'px) rotate('
++ rot
++ 'deg) scale('
++ sc
++ ')';
+
+s.style.opacity='0';
+
+}
+)
+);
+
+setTimeout(
+() => s.remove(),
+1300
+);
+
+}
+
+}
+
+</script>
+
 </body>
 </html>
