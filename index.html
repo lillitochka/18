@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>З Днем Народження, Машка! ✨🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-pink: #fff0f4;
+      --card-bg: #ffffff;
+      --pink-main: #ff4d6d;
+      --pink-soft: #ff85a2;
+      --pink-light: #ffe5ec;
+      --text-dark: #4a2831;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #2b1f24;
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    .canvas-container {
+      width: 100%;
+      max-width: 430px;
+      background-color: var(--bg-pink);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 40px;
+    }
+
+    /* Marquee Banner Top */
+    .marquee-container {
+      background: var(--pink-main);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 7px 0;
+      letter-spacing: 1.5px;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 14s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+
+    .sticker-birthday-title {
+      width: 80%;
+      max-width: 280px;
+      margin: 0 auto 15px;
+      filter: drop-shadow(0 6px 10px rgba(255, 77, 109, 0.25));
+    }
+
+    .hero-cutouts-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .balloon-16 {
+      width: 150px;
+      filter: drop-shadow(0 8px 15px rgba(255, 77, 109, 0.3));
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    .cat-cutout {
+      position: absolute;
+      left: 10px;
+      bottom: -10px;
+      width: 140px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      animation: floatReverse 3.5s ease-in-out infinite;
+    }
+
+    .monkeys-cutout {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      width: 125px;
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* Red Action Button */
+    .btn-container {
+      padding: 10px 20px 20px;
+      text-align: center;
+    }
+
+    .pink-btn {
+      background: linear-gradient(135deg, #ff4d6d 0%, #ff758f 100%);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 16px 30px;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.35);
+      transition: all 0.2s ease;
+      letter-spacing: 1px;
+    }
+
+    .pink-btn:hover {
+      transform: translateY(-2deg);
+      box-shadow: 0 12px 25px rgba(255, 77, 109, 0.45);
+    }
+
+    /* Section: Wishes & Telegram Bubble */
+    .wishes-section {
+      padding: 15px 20px;
+      position: relative;
+    }
+
+    .section-header {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--pink-main);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tg-bubble {
+      background: #2b1f24;
+      color: white;
+      border-radius: 16px;
+      padding: 18px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 2px solid #ff758f;
+    }
+
+    .tg-pushpin {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      font-size: 1.4rem;
+    }
+
+    .tg-time {
+      font-size: 0.75rem;
+      color: #ff85a2;
+      text-align: right;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Interactive Vinyl Player */
+    .vinyl-section {
+      margin: 25px 20px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      border: 3px solid var(--pink-light);
+      box-shadow: 0 8px 20px rgba(255, 133, 162, 0.15);
+    }
+
+    .vinyl-disc {
+      width: 130px;
+      height: 130px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #333 18%, #111 20%, #111 40%, #222 41%, #111 60%, var(--pink-main) 61%, var(--pink-main) 100%);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .vinyl-center {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      border: 3px solid var(--pink-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .spinning {
+      animation: spinVinyl 3.5s linear infinite;
+    }
+
+    @keyframes spinVinyl {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Collage Showcase Section */
+    .collage-section {
+      padding: 20px;
+    }
+
+    .collage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .collage-card {
+      background: white;
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      border: 2px solid var(--pink-light);
+      text-align: center;
+    }
+
+    .collage-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+    }
+
+    .collage-card p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--pink-main);
+      margin-top: 8px;
+    }
+
+    /* Big Birthday Foil Banner Section */
+    .foil-banner-section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .foil-img {
+      width: 100%;
+      max-width: 320px;
+      filter: drop-shadow(0 6px 12px rgba(255, 77, 109, 0.3));
+    }
+
+    /* Footer Promo Section */
+    .footer-promo {
+      margin: 25px 20px 0;
+      background: linear-gradient(135deg, #ff4d6d 0%, #ff758f 100%);
+      color: white;
+      padding: 25px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+    }
+
+    .footer-promo h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-promo p {
+      font-size: 0.85rem;
+      color: #fff0f5;
+      margin-bottom: 15px;
+    }
+
+    .promo-btn {
+      display: inline-block;
+      background: white;
+      color: var(--pink-main);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="canvas-container">
+    
+    <!-- Running Marquee Banner -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ •
+      </div>
+    </div>
+
+    <!-- Hero Cutout Section -->
+    <section class="hero-section">
+      <!-- Scrapbook Happy Birthday Sticker -->
+      <img src="https://i.ibb.co/3ykK3s2/image-7.png" class="sticker-birthday-title" alt="Happy Birthday">
+      
+      <!-- Cutouts Composition -->
+      <div class="hero-cutouts-wrapper">
+        <img src="https://i.ibb.co/k06pnpf/image-5.png" class="cat-cutout" alt="Cat with flowers">
+        <img src="https://i.ibb.co/9V40sVv/image-10.png" class="balloon-16" alt="16 Balloons">
+        <img src="https://i.ibb.co/sK0tS3W/image-4.png" class="monkeys-cutout" alt="Hugging Monkeys">
+      </div>
+    </section>
+
+    <!-- Action Button -->
+    <div class="btn-container">
+      <button class="pink-btn" onclick="alert('Машка, ти найкраща! ✨💖🌸')">ТИКНИ НА МЕНЕ</button>
+    </div>
+
+    <!-- Wishes Telegram Bubble Section -->
+    <section class="wishes-section">
+      <div class="section-header">
+        ПОБАЖАННЯ ДЛЯ МАШІ 💖
+      </div>
+      
+      <div class="tg-bubble">
+        <span class="tg-pushpin">📌</span>
+        Машка! Щастя, здоров'я, грошей побільше, щирого кохання, вірних друзів, кар'єрного росту, люблячих людей навколо тебе, здійснення всіх твоїх мрій та незабутніх емоцій! ✨🌸
+        <div class="tg-time">00:31 💖</div>
+      </div>
+    </section>
+
+    <!-- Music Player -->
+    <section class="vinyl-section">
+      <h3 style="font-size: 1rem; color: var(--pink-main); margin-bottom: 5px;">🎵 Музичний вініл Маші</h3>
+      <div class="vinyl-disc" id="vinyl" onclick="toggleMusic()">
+        <div class="vinyl-center">🌸</div>
+      </div>
+      <p id="musicStatus" style="font-size: 0.8rem; color: #888; margin-top: 5px;">Натисни, щоб увімкнути музику 🎶</p>
+      <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-love-111578.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <!-- Grid of Cutouts (Cake & Bouquet) -->
+    <section class="collage-section">
+      <div class="section-header">
+        ДЛЯ НАЙКРАЩОЇ 💐
+      </div>
+      <div class="collage-grid">
+        <div class="collage-card">
+          <img src="https://i.ibb.co/wJtW70S/image-8.png" alt="Cake">
+          <p>Солодкого життя! 🎂</p>
+        </div>
+        <div class="collage-card">
+          <img src="https://i.ibb.co/3fdpXF4/image-9.png" alt="Roses">
+          <p>Мільйон троянд 🌹</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Happy Birthday Foil Balloons Banner -->
+    <section class="foil-banner-section">
+      <img src="https://i.ibb.co/VMy4v2h/image-6.png" class="foil-img" alt="Happy Birthday Foil Balloons">
+    </section>
+
+    <!-- Footer Promo -->
+    <footer class="footer-promo">
+      <h4>Привітай своїх близьких оригінально! ✨</h4>
+      <p>Створи власний сайт-подарунок зі знижкою 50 грн за промокодом <b>kvit-50</b>!</p>
+      <a href="https://kvisite.com" target="_blank" class="promo-btn">Замовити на kvisite 🚀</a>
+    </footer>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const vinyl = document.getElementById('vinyl');
+    const statusText = document.getElementById('musicStatus');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        vinyl.classList.remove('spinning');
+        statusText.innerText = 'Натисни, щоб увімкнути музику 🎶';
+      } else {
+        audio.play();
+        vinyl.classList.add('spinning');
+        statusText.innerText = 'Грає музика... ✨ (Натисни, щоб зупинити)';
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+
+</body>
+</html>
 
