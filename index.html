@@ -1,1157 +1,1553 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fffaf8">
-<title>З днем народження, люба!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fffcec">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<title>Настеньці — 16! З днем народження</title>
+
+<meta name="description" content="Особливе привітання для Настеньки з її шістнадцятим днем народження. Трохи ніжності, теплих слів і святкової магії.">
 
 <style>
 :root {
-  --paper: #fffaf7;
-  --pink: #e9a9b9;
-  --pink-dark: #c87991;
-  --pink-light: #f9e4e8;
-  --ink: #37302f;
-  --muted: #8d7c78;
-  --line: #e9dcd5;
-  --cream: #f8f0e8;
+  --cream: #fffced;
+  --pink: #ee8ea8;
+  --rose: #b82a55;
+  --dark: #762a44;
+  --pale: #f9e2df;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  color: var(--ink);
-  background-color: var(--paper);
-  font-family: "DM Sans", sans-serif;
-  overflow-x: hidden;
+  background: #eedbd6;
+  color: var(--dark);
+  font-family: "Trebuchet MS", Arial, sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-  opacity: .15;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+button,
+label {
+  -webkit-tap-highlight-color: transparent;
 }
 
-button, a { -webkit-tap-highlight-color: transparent; }
-
-button { font: inherit; }
-
-a { color: inherit; }
-
-img { max-width: 100%; }
-
-.page {
-  width: min(100% - 32px, 850px);
-  margin: 0 auto;
+button {
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
-.hand {
-  font-family: "Caveat", cursive;
-  font-weight: 500;
+button:focus-visible,
+a:focus-visible,
+label:focus-within {
+  outline: 3px solid #9e3154;
+  outline-offset: 6px;
 }
 
-.serif {
-  font-family: "Playfair Display", serif;
-}
-
-.eyebrow {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: .25em;
-  color: var(--pink-dark);
-}
-
-.tiny-note {
-  color: var(--muted);
-  font-family: "Caveat", cursive;
-  font-size: 19px;
-}
-
-.paper-section {
-  position: relative;
-  padding: 76px 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-.section-heading .hand {
-  display: block;
-  font-size: clamp(36px, 7vw, 53px);
-  line-height: 1.05;
-}
-
-.section-heading p {
-  font-size: 12px;
-  color: var(--muted);
-  letter-spacing: .05em;
-  line-height: 1.8;
-}
-
-.doodle {
-  position: absolute;
-  pointer-events: none;
-  color: #8b7774;
-  font-family: "Caveat", cursive;
-  user-select: none;
-}
-
-.stamp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  height: 72px;
-  border: 1px solid #dca0af;
-  border-radius: 50%;
-  color: var(--pink-dark);
-  font-family: "Caveat", cursive;
-  font-size: 20px;
-  line-height: 1.05;
-  text-align: center;
-  transform: rotate(12deg);
-}
-
-/* ПЕРШИЙ ЕКРАН */
-
-.hero {
-  min-height: 760px;
-  min-height: min(880px, 100svh);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 110px 0 70px;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(ellipse at 50% 44%, rgba(249,226,230,.5), transparent 58%),
-    var(--paper);
-}
-
-.hero-inner {
-  width: min(100% - 34px, 720px);
+main {
+  max-width: 800px;
   margin: auto;
-  text-align: center;
-  position: relative;
-}
-
-.garland {
-  position: absolute;
-  top: 0;
-  left: -8%;
-  width: 116%;
-  height: 112px;
-  pointer-events: none;
-}
-
-.garland svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.hero-small {
-  margin-top: 30px;
-  margin-bottom: 16px;
-  font-size: 10px;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.hero h1 {
-  font-size: clamp(43px, 10vw, 82px);
-  font-weight: 400;
-  line-height: .99;
-  letter-spacing: -.055em;
-  margin: 0;
-}
-
-.hero h1 span {
-  display: block;
-  color: var(--pink-dark);
-  font-family: "Caveat", cursive;
-  font-size: 1.13em;
-  letter-spacing: -.025em;
-}
-
-.hero-name {
-  font-family: "Caveat", cursive;
-  font-size: clamp(37px, 7vw, 57px);
-  margin-top: 14px;
-  color: #5c4847;
-}
-
-.hero-age {
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: .15em;
-}
-
-.hero-age::before, .hero-age::after {
-  content: "";
-  height: 1px;
-  width: 25px;
-  background: #dcb9be;
-}
-
-.hero-illustration {
-  width: min(290px, 72vw);
-  height: 185px;
-  margin: 22px auto 8px;
-  position: relative;
-}
-
-.hero-illustration svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.hero-caption {
-  font-family: "Caveat", cursive;
-  font-size: 20px;
-  color: var(--muted);
-  transform: rotate(-3deg);
-}
-
-.primary-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 24px;
-  text-decoration: none;
-  border: 1px solid #e1c8c6;
-  padding: 12px 19px;
-  border-radius: 3px;
-  font-size: 11px;
-  letter-spacing: .08em;
-  transition: background .25s, transform .25s;
-}
-
-.primary-link:hover {
-  background: var(--pink-light);
-  transform: translateY(-2px);
-}
-
-.primary-link span { color: var(--pink-dark); }
-
-.hero-side-note {
-  position: absolute;
-  right: 0;
-  top: 44%;
-  font-family: "Caveat", cursive;
-  font-size: 19px;
-  transform: rotate(9deg);
-  color: #9e8580;
-}
-
-.hero-side-note::after {
-  content: "﹏";
-  display: block;
-  font-size: 35px;
-  transform: rotate(-20deg);
-}
-
-.hero-star {
-  position: absolute;
-  font-family: "Caveat", cursive;
-  color: #c58d9b;
-  font-size: 30px;
-}
-
-.star-one { left: 4%; top: 40%; transform: rotate(-15deg); }
-.star-two { right: 5%; top: 24%; transform: rotate(14deg); }
-.star-three { left: 11%; bottom: 15%; font-size: 23px; }
-
-/* ФОТО POLAROID */
-
-.polaroid {
-  width: min(340px, 78vw);
-  background: #fff;
-  padding: 12px 12px 18px;
-  box-shadow: 0 9px 25px rgba(85, 57, 48, .12);
-  border: 1px solid #f0e9e4;
-  position: relative;
-}
-
-.polaroid img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  background: #f3e9e4;
-}
-
-.polaroid-caption {
-  padding-top: 9px;
-  font-family: "Caveat", cursive;
-  text-align: center;
-  font-size: 24px;
-  color: #665250;
-}
-
-.polaroid::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 42%;
-  width: 72px;
-  height: 23px;
-  transform: rotate(-7deg);
-  background: rgba(239, 191, 198, .62);
-  clip-path: polygon(4% 0, 100% 4%, 95% 100%, 0 95%);
-  z-index: 2;
-}
-
-.portrait-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.portrait-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-}
-
-.portrait-wrap .polaroid { transform: rotate(-4deg); }
-
-.portrait-note {
-  position: absolute;
-  bottom: 5px;
-  right: -5px;
-  font-size: 21px;
-  transform: rotate(7deg);
-}
-
-.portrait-copy .hand {
-  font-size: 39px;
-  color: var(--pink-dark);
-  line-height: 1.05;
-}
-
-.portrait-copy p {
-  font-size: 13px;
-  line-height: 2;
-  color: #766663;
-}
-
-.underlined {
-  background: linear-gradient(transparent 70%, #f3d0d7 70%);
-}
-
-/* ПРИВІТАННЯ */
-
-.greeting-section {
-  padding: 70px 0;
   background: var(--cream);
-  position: relative;
-}
-
-.greeting-card {
-  background: #f5dce2;
-  border: 1px solid #ecc8d0;
-  border-radius: 8px 36px 8px 36px;
-  padding: clamp(25px, 6vw, 55px);
-  position: relative;
-  box-shadow: 5px 7px 0 rgba(204, 154, 164, .11);
   overflow: hidden;
-}
-
-.greeting-card::before {
-  content: "♡";
-  position: absolute;
-  right: 20px;
-  top: 0;
-  color: rgba(177, 109, 129, .2);
-  font-family: "Caveat", cursive;
-  font-size: 100px;
-  transform: rotate(15deg);
-}
-
-.greeting-card .hand {
-  font-size: clamp(35px, 7vw, 51px);
-  color: #a75f77;
-  margin: 0 0 12px;
-}
-
-.greeting-card p {
-  max-width: 560px;
+  box-shadow: 0 0 80px #8a4b4b1a;
   position: relative;
-  font-size: 13px;
-  line-height: 2.1;
-  color: #685153;
 }
 
-.greeting-signature {
-  text-align: right;
-  font-family: "Caveat", cursive;
-  font-size: 29px;
-  color: #a75f77;
-  margin-top: 22px;
+p {
+  line-height: 1.7;
 }
 
-/* КОЛАЖ */
-
-.memories-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 42px 25px;
-  align-items: start;
+h1,
+h2,
+p {
+  margin-top: 0;
 }
 
-.memory {
-  position: relative;
-  width: 100%;
-}
-
-.memory:nth-child(even) { margin-top: 44px; }
-
-.memory .polaroid {
-  width: 100%;
-  max-width: 310px;
-  padding: 9px 9px 16px;
-}
-
-.memory:nth-child(1) .polaroid { transform: rotate(-3deg); }
-.memory:nth-child(2) .polaroid { transform: rotate(3.5deg); }
-.memory:nth-child(3) .polaroid { transform: rotate(2deg); }
-.memory:nth-child(4) .polaroid { transform: rotate(-4deg); }
-
-.memory .polaroid img {
-  aspect-ratio: 4 / 4.5;
-}
-
-.memory-note {
-  margin: 13px 0 0 8px;
-  font-family: "Caveat", cursive;
-  font-size: 23px;
-  color: #8b6e70;
-  line-height: 1.2;
-  transform: rotate(-2deg);
-}
-
-.memory-date {
-  font-family: "DM Sans", sans-serif;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  color: #b79a95;
-  margin-top: 7px;
-}
-
-.tape {
-  position: absolute;
-  z-index: 2;
-  top: -8px;
-  left: 35%;
-  width: 68px;
-  height: 20px;
-  background: rgba(234, 192, 199, .7);
-  transform: rotate(-8deg);
-}
-
-/* КАЛЕНДАР */
-
-.calendar-section {
-  background: #f7eee7;
-  padding: 60px 0;
-}
-
-.calendar {
-  max-width: 360px;
-  margin: auto;
-  background: #fffdfa;
-  padding: 26px;
-  border: 1px solid #eadbd2;
-  box-shadow: 4px 6px 0 rgba(125, 91, 78, .06);
-  transform: rotate(1.5deg);
-}
-
-.calendar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 14px;
-  margin-bottom: 17px;
-}
-
-.calendar-top .hand {
-  font-size: 34px;
-  color: var(--pink-dark);
-}
-
-.calendar-top small {
-  font-size: 9px;
-  letter-spacing: .15em;
-  color: var(--muted);
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  gap: 9px 4px;
-}
-
-.calendar-grid span {
-  font-size: 11px;
-  min-height: 26px;
-  display: grid;
-  place-items: center;
-}
-
-.calendar-grid .weekday {
-  color: #b18f8d;
-  font-size: 9px;
-  font-weight: 600;
-}
-
-.calendar-grid .birthday-day {
-  position: relative;
-  background: #e7a9b8;
-  color: white;
-  border-radius: 50%;
+h2 {
+  font-size: clamp(33px, 5.8vw, 55px);
+  line-height: 1.05;
+  letter-spacing: -1.9px;
   font-weight: 700;
 }
 
-.calendar-grid .birthday-day::after {
-  content: "♡";
-  position: absolute;
-  right: -7px;
-  top: -12px;
-  font-family: "Caveat", cursive;
-  font-size: 16px;
-  color: #ba7185;
+h2 em,
+.script {
+  font-family: Georgia, serif;
+  font-weight: 400;
 }
 
-.calendar-caption {
-  text-align: center;
-  margin-top: 22px;
-  font-family: "Caveat", cursive;
-  color: #927472;
-  font-size: 22px;
-}
-
-/* ЛИСТ */
-
-.letter-section { padding: 78px 0; }
-
-.letter {
-  max-width: 620px;
-  margin: auto;
-  padding: 35px clamp(22px, 6vw, 48px);
-  background:
-    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(219, 189, 179, .26) 32px),
-    #fffdf9;
-  border: 1px solid #eee2da;
-  box-shadow: 0 7px 24px rgba(100, 69, 60, .06);
+section {
   position: relative;
+  text-align: center;
+  padding: 95px 52px;
 }
 
-.letter::before {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px dashed #e5c8c7;
-  pointer-events: none;
-}
-
-.letter-content { position: relative; }
-
-.letter h3 {
-  font-family: "Caveat", cursive;
-  font-size: 39px;
-  color: #bd7b8d;
-  font-weight: 500;
-  margin: 0 0 16px;
-}
-
-.letter p {
-  font-size: 13px;
-  line-height: 2.35;
-  color: #695b57;
-}
-
-.letter-button {
-  border: 1px solid #dcb2bb;
-  color: #9d6574;
-  background: #fff8f7;
-  padding: 11px 18px;
-  margin-top: 12px;
-  cursor: pointer;
+.eyebrow {
+  text-transform: uppercase;
   font-size: 11px;
-  letter-spacing: .08em;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
-.letter-hidden {
-  display: none;
-  animation: reveal .7s ease both;
-}
-
-.letter-hidden.show { display: block; }
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ФІНАЛ */
-
-.final-section {
-  position: relative;
-  padding: 85px 0 95px;
-  background:
-    radial-gradient(ellipse at 50% 45%, #f8e5e8 0, transparent 60%),
-    #fffaf7;
-  text-align: center;
-  border-top: 1px solid var(--line);
-}
-
-.final-photo {
+.ribbon {
+  background: var(--pink);
+  color: var(--cream);
+  height: 37px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 27px;
-  max-width: 600px;
-  margin: 0 auto 35px;
+  overflow: hidden;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.final-photo .polaroid {
-  width: 190px;
-  transform: rotate(-5deg);
+.ribbon span {
+  min-width: 100%;
+  text-align: center;
 }
 
-.final-photo .polaroid img {
-  aspect-ratio: 3 / 4;
+.hero {
+  padding-top: 65px;
+  padding-bottom: 45px;
+  min-height: 920px;
 }
 
-.wish-cloud {
+.hero .eyebrow {
+  margin-bottom: 26px;
+}
+
+h1 {
+  font-size: clamp(55px, 10vw, 87px);
+  line-height: .98;
+  letter-spacing: -4px;
+  color: var(--rose);
+  margin-bottom: 0;
+}
+
+.hero .sub {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 27px;
+  margin: 15px 0 0;
+}
+
+.hero-art {
+  height: 455px;
   position: relative;
-  max-width: 230px;
-  padding: 18px 19px;
-  background: #f3d9e0;
-  border-radius: 48% 46% 43% 45%;
-  font-family: "Caveat", cursive;
-  font-size: 23px;
-  color: #845e67;
-  transform: rotate(3deg);
+  margin: 15px -25px 0;
 }
 
-.wish-cloud::after {
+.number {
+  position: absolute;
+  width: 80%;
+  height: 350px;
+  left: -5%;
+  top: -12px;
+  filter: drop-shadow(0 8px 4px #a5445320);
+}
+
+.cake {
+  position: absolute;
+  width: 65%;
+  max-width: 470px;
+  left: 26%;
+  bottom: -20px;
+  z-index: 2;
+  filter: drop-shadow(0 15px 10px #8c4c4614);
+}
+
+.balloons {
+  position: absolute;
+  right: -54px;
+  top: -48px;
+  width: 42%;
+  z-index: 3;
+  transform: rotate(11deg);
+  animation: float 7s ease-in-out infinite;
+}
+
+.spark {
+  position: absolute;
+  fill: #d8a950;
+  z-index: 4;
+  width: 32px;
+  height: 45px;
+}
+
+.s1 {
+  left: 5%;
+  top: 55%;
+  transform: rotate(12deg);
+}
+
+.s2 {
+  right: 13%;
+  top: 73%;
+  width: 22px;
+  fill: var(--pink);
+}
+
+.s3 {
+  left: 20%;
+  top: 6%;
+  width: 23px;
+  fill: var(--pink);
+}
+
+.hero-message {
+  font-size: 16px;
+  max-width: 370px;
+  margin: 35px auto 25px;
+}
+
+.scroll {
+  color: var(--rose);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 11px;
+  align-items: center;
+}
+
+.scroll svg {
+  width: 16px;
+  height: 24px;
+}
+
+.tiny {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.letter {
+  background: var(--pale);
+  padding-top: 85px;
+  padding-bottom: 90px;
+}
+
+.letter:before,
+.letter:after {
   content: "";
   position: absolute;
-  bottom: -12px;
-  left: 25%;
-  border-width: 14px 13px 0 0;
-  border-style: solid;
-  border-color: #f3d9e0 transparent transparent transparent;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  background:
+    radial-gradient(
+      circle at 10px 0,
+      var(--cream) 10px,
+      transparent 10.5px
+    ) 0 0 / 20px 14px;
+  top: 0;
 }
 
-.final-section h2 {
-  font-size: clamp(37px, 8vw, 61px);
-  line-height: 1;
+.letter:after {
+  top: auto;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+
+.letter .eyebrow {
+  margin-bottom: 36px;
+}
+
+.envelope {
+  position: relative;
+  margin: 38px auto 0;
+  max-width: 440px;
+}
+
+.envelope-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 225px;
+  border: 1px solid #e5adb8;
+  background: #f3c6cb;
+  box-shadow: 0 13px 30px #9d4e5b15;
+  color: var(--dark);
+  border-radius: 2px;
+}
+
+.envelope-button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f6d6d9;
+  clip-path: polygon(0 0, 100% 0, 50% 64%);
+}
+
+.envelope-button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f0bcc6;
+  clip-path:
+    polygon(
+      0 100%,
+      0 12%,
+      50% 67%,
+      100% 12%,
+      100% 100%
+    );
+}
+
+.seal {
+  position: absolute;
+  left: calc(50% - 30px);
+  top: 105px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #b92b55;
+  color: #ffe3d9;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 28px;
+  box-shadow:
+    inset 0 0 0 5px #ffffff18,
+    0 4px 8px #7a29442b;
+  z-index: 2;
+}
+
+.open-hint {
+  display: block;
+  margin-top: 23px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.letter-paper {
+  position: relative;
+  text-align: left;
+  background: var(--cream);
+  padding: 38px 35px;
+  box-shadow: 0 12px 35px #9d4e5b12;
+  margin-top: 25px;
+  animation: unfold .5s ease both;
+}
+
+.letter-paper h3 {
+  font-family: Georgia, serif;
+  font-style: italic;
   font-weight: 400;
+  font-size: 30px;
+  margin: 0 0 20px;
+}
+
+.letter-paper p {
+  font-size: 15px;
+}
+
+.signature {
+  text-align: right;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 21px !important;
+}
+
+.wish-section {
+  padding-top: 100px;
+  min-height: 720px;
+}
+
+.wish-section h2 {
+  max-width: 500px;
+  margin: 22px auto;
+}
+
+.wish-lead {
+  font-size: 14px;
+  max-width: 365px;
+  margin: 0 auto;
+}
+
+.wish-orbit {
+  height: 300px;
+  position: relative;
+  max-width: 480px;
+  margin: 25px auto 0;
+}
+
+.wish-orbit button {
+  position: absolute;
+  border: none;
+  color: var(--dark);
+  transition: transform .2s, filter .2s;
+}
+
+.wish-orbit button:hover {
+  filter: brightness(1.04);
+  transform: rotate(0deg) scale(1.08);
+}
+
+.wish-orbit button[aria-pressed="true"] {
+  filter: drop-shadow(0 7px 8px #b72b5525);
+}
+
+.wish-star {
+  width: 142px;
+  height: 142px;
+  background:
+    linear-gradient(
+      135deg,
+      #fff5bc,
+      #d5ad5d 48%,
+      #fff2b7
+    );
+  clip-path:
+    polygon(
+      50% 0,
+      61% 34%,
+      98% 35%,
+      69% 57%,
+      79% 95%,
+      50% 74%,
+      21% 95%,
+      31% 57%,
+      2% 35%,
+      39% 34%
+    );
+  left: 3%;
+  top: 2%;
+  font-size: 12px;
+  font-weight: bold;
+  transform: rotate(-12deg);
+}
+
+.wish-heart {
+  width: 135px;
+  height: 125px;
+  right: 5%;
+  top: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      #ffe0e3,
+      #ed8da8 60%,
+      #ca6383
+    );
+  clip-path:
+    path(
+      "M 67 23 C 10 -30 -31 55 67 121 C 165 55 124 -30 67 23 Z"
+    );
+  padding-bottom: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  transform: rotate(13deg);
+}
+
+.wish-ticket {
+  left: 18%;
+  top: 176px;
+  width: 170px;
+  height: 80px;
+  background: #f8d2dc;
+  border: 1px dashed #bd6b83 !important;
+  transform: rotate(-8deg);
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.wish-flower {
+  right: 5%;
+  top: 163px;
+  width: 117px;
+  height: 117px;
+  background: #e9a1b4;
+  border-radius: 40%;
+  transform: rotate(12deg);
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: inset 0 0 0 12px #f5c5d1;
+}
+
+.wish-answer {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 23px;
+  min-height: 90px;
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: var(--rose);
+}
+
+.photo-section {
+  background: #f4bcc9;
+  padding: 85px 0 70px;
+}
+
+.photo-section .eyebrow,
+.photo-section h2 {
+  padding: 0 30px;
+}
+
+.photo-section h2 {
+  margin: 22px 0 40px;
+}
+
+.film {
+  background: #6f303f;
+  display: flex;
+  gap: 14px;
+  padding: 31px 21px;
+  position: relative;
+  transform: rotate(-4deg);
+  width: 108%;
+  margin-left: -4%;
+}
+
+.film:before,
+.film:after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  left: 0;
+  right: 0;
+  top: 9px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 17px,
+      #f4bcc9 17px 28px,
+      transparent 28px 43px
+    );
+}
+
+.film:after {
+  top: auto;
+  bottom: 9px;
+}
+
+.photo {
+  display: block;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: calc((100% - 28px) / 3);
+  background: #f9e7dc;
+  overflow: hidden;
+  cursor: pointer;
+  color: #9a5a67;
+}
+
+.photo input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.photo .placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #f5d5cf 0 10px,
+      #f8e5d8 10px 20px
+    );
+}
+
+.photo:nth-child(2) .placeholder {
+  background:
+    radial-gradient(
+      circle,
+      #d9a2a9 2px,
+      transparent 3px
+    ) 0 0 / 18px 18px #f8e8d5;
+}
+
+.photo:nth-child(3) .placeholder {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #f8e4d3 0 18px,
+      #efcbd0 18px 20px
+    );
+}
+
+.placeholder svg {
+  width: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+}
+
+.placeholder span {
+  background: #fff7e9df;
+  padding: 7px 11px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.photo-note {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 20px;
+  margin: 42px 25px 0;
+  line-height: 1.5;
+}
+
+.photo-section small {
+  display: block;
+  font-size: 11px;
+  opacity: .8;
+  margin: 14px 30px 0;
+}
+
+.quote-section {
+  padding: 100px 55px 115px;
+}
+
+.quote-section .big-star {
+  width: 42px;
+  height: 55px;
+  fill: #caa254;
+  margin-bottom: 27px;
+}
+
+.quote-section blockquote {
+  font-family: Georgia, serif;
+  font-size: clamp(31px, 5.5vw, 48px);
+  line-height: 1.25;
+  letter-spacing: -1px;
   margin: 0;
 }
 
-.final-section h2 span {
-  display: block;
-  font-family: "Caveat", cursive;
-  color: var(--pink-dark);
-  font-size: 1.2em;
-  margin-top: 6px;
+.quote-section blockquote em {
+  color: var(--rose);
 }
 
-.final-text {
-  max-width: 440px;
-  margin: 20px auto 0;
-  color: #897774;
+.quote-section .tiny {
+  margin-top: 30px;
+}
+
+.final {
+  background: #f9e2df;
+  padding-top: 82px;
+  padding-bottom: 75px;
+}
+
+.final h2 {
+  font-size: clamp(39px, 7vw, 63px);
+  margin: 22px 0 0;
+}
+
+.final-art {
+  height: 285px;
+  position: relative;
+  max-width: 430px;
+  margin: 10px auto 5px;
+}
+
+.final-art img {
+  position: absolute;
+  left: 9%;
+  top: -35px;
+  width: 82%;
+  height: 340px;
+  object-fit: contain;
+}
+
+.primary {
+  border: 0;
+  border-radius: 50px;
+  background: var(--rose);
+  color: #fff9e9;
+  padding: 19px 30px;
   font-size: 12px;
-  line-height: 2;
+  letter-spacing: 1px;
+  min-height: 54px;
+  box-shadow: 0 7px 0 #94304d18;
+  transition: transform .2s;
 }
 
-.squiggle {
-  width: 115px;
-  height: 30px;
-  margin: 23px auto;
+.primary:hover {
+  transform: translateY(-3px);
 }
 
-.footer-note {
-  font-family: "Caveat", cursive;
-  font-size: 22px;
-  color: #b1848d;
-  margin-top: 26px;
+.wish-result {
+  max-width: 380px;
+  min-height: 55px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin: 24px auto 0;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-@media (max-width: 560px) {
-  .page { width: min(100% - 30px, 850px); }
+.footer {
+  background: var(--cream);
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-  .hero { min-height: 760px; }
+.footer b {
+  display: block;
+  color: var(--rose);
+  font-family: Georgia, serif;
+  font-style: italic;
+  text-transform: none;
+  font-size: 26px;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+}
 
-  .hero-side-note { right: 0; font-size: 16px; }
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+}
 
-  .portrait-section {
-    grid-template-columns: 1fr;
-    gap: 22px;
+[hidden] {
+  display: none !important;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-13px) rotate(7deg);
+  }
+}
+
+@keyframes unfold {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
 
-  .portrait-copy {
-    text-align: center;
-    max-width: 400px;
-    margin: auto;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1100px) {
+  main {
+    margin: 35px auto;
+    border: 1px solid #d9bcb4;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
-  .portrait-wrap { padding-bottom: 25px; }
+  .hero {
+    min-height: 780px;
+    padding-top: 52px;
+  }
 
-  .memories-grid { gap: 35px 15px; }
+  .hero-art {
+    height: 370px;
+    margin-top: 24px;
+  }
 
-  .memory:nth-child(even) { margin-top: 32px; }
+  .number {
+    height: 290px;
+  }
 
-  .memory-note { font-size: 20px; }
+  .cake {
+    width: 75%;
+    left: 24%;
+    bottom: -15px;
+  }
 
-  .memory .polaroid { padding: 7px 7px 12px; }
+  .balloons {
+    right: -24px;
+    top: -20px;
+    width: 43%;
+  }
 
-  .memory .polaroid-caption { font-size: 20px; }
+  .hero-message {
+    margin-top: 24px;
+    font-size: 14px;
+    max-width: 300px;
+  }
 
-  .final-photo { gap: 15px; }
+  h1 {
+    letter-spacing: -2.5px;
+  }
 
-  .final-photo .polaroid { width: 48%; padding: 8px 8px 13px; }
+  .hero .sub {
+    font-size: 22px;
+  }
 
-  .wish-cloud { font-size: 20px; padding: 14px; }
+  .envelope-button {
+    height: 190px;
+  }
 
-  .paper-section { padding: 58px 0; }
+  .seal {
+    top: 82px;
+  }
+
+  .wish-orbit {
+    height: 295px;
+  }
+
+  .wish-answer {
+    font-size: 21px;
+  }
+
+  .wish-star {
+    left: 0;
+  }
+
+  .wish-heart {
+    right: 0;
+  }
+
+  .wish-ticket {
+    left: 3%;
+    width: 155px;
+  }
+
+  .wish-flower {
+    right: 2%;
+  }
+
+  .photo-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .placeholder span {
+    font-size: 8px;
+    letter-spacing: 0;
+    padding: 6px;
+  }
+
+  .film {
+    gap: 9px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .photo {
+    width: calc((100% - 18px) / 3);
+  }
+
+  .letter-paper {
+    padding: 30px 25px;
+  }
+
+  .final-art {
+    height: 255px;
+  }
+
+  .final-art img {
+    height: 310px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .ribbon {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ІМ'Я, ВІК І ДАТУ МОЖНА ЗМІНИТИ В ЦЬОМУ БЛОЦІ -->
+<svg
+  width="0"
+  height="0"
+  aria-hidden="true"
+  style="position:absolute"
+>
+  <defs>
+    <symbol id="spark" viewBox="0 0 40 60">
+      <path d="M20 0C22 23 25 27 40 30C25 33 22 37 20 60C18 37 15 33 0 30C15 27 18 23 20 0Z"/>
+    </symbol>
 
-<header class="hero" id="top">
-  <div class="garland" aria-hidden="true">
-    <svg viewBox="0 0 900 120" preserveAspectRatio="none">
-      <path d="M-20 12 Q220 120 460 48 T920 22" fill="none" stroke="#9d8580" stroke-width="1.2"/>
-      <g stroke="#d69aaa" stroke-width=".5">
-        <path d="M32 26 L77 40 L49 81 Z" fill="#f3c8d1"/>
-        <path d="M92 45 L136 57 L108 98 Z" fill="#e6a9b9"/>
-        <path d="M154 60 L198 69 L173 110 Z" fill="#f6dbe1"/>
-        <path d="M220 69 L265 73 L242 113 Z" fill="#e9b4c1"/>
-        <path d="M289 72 L333 70 L316 110 Z" fill="#f6dbe1"/>
-        <path d="M360 68 L403 62 L393 101 Z" fill="#e8aabc"/>
-        <path d="M433 54 L477 45 L468 84 Z" fill="#f7dce2"/>
-        <path d="M507 41 L551 31 L546 70 Z" fill="#e6a9b9"/>
-        <path d="M581 30 L624 20 L620 59 Z" fill="#f7dce2"/>
-        <path d="M656 22 L700 15 L697 53 Z" fill="#e8b2bf"/>
-        <path d="M732 18 L775 12 L771 49 Z" fill="#f6dbe1"/>
-        <path d="M808 16 L852 10 L847 46 Z" fill="#e7a9b9"/>
-      </g>
-    </svg>
-  </div>
+    <symbol id="camera" viewBox="0 0 40 32">
+      <path d="M5 7h7l3-5h10l3 5h7v23H5Z"/>
+      <circle cx="20" cy="18" r="7"/>
+      <path d="M30 12h2"/>
+    </symbol>
+  </defs>
+</svg>
 
-  <span class="hero-star star-one">✳</span>
-  <span class="hero-star star-two">✧</span>
-  <span class="hero-star star-three">♡</span>
-
-  <div class="hero-inner">
-    <div class="hero-small">маленький альбом великого дня</div>
-
-    <h1 class="serif">
-      З днем
-      <span>народження!</span>
-    </h1>
-
-    <div class="hero-name" id="heroName">Імениннице</div>
-
-    <div class="hero-age">
-      <span id="heroAge">твій особливий день</span>
-    </div>
-
-    <div class="hero-illustration" aria-label="Малюнок святкового торта">
-      <svg viewBox="0 0 320 205" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#655653" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M65 135 Q160 117 255 135 L246 169 Q160 185 74 169 Z" fill="#fff8f2"/>
-          <path d="M65 135 Q160 154 255 135" fill="none"/>
-          <path d="M65 135 Q76 117 95 127 Q113 138 129 126 Q145 115 160 128 Q178 141 195 126 Q219 112 235 130 Q246 130 255 135" fill="#f0b7c5"/>
-          <path d="M74 169 Q160 188 246 169"/>
-          <path d="M103 128 L103 99 Q160 84 217 99 L217 128" fill="#f8d9df"/>
-          <path d="M103 99 Q160 114 217 99"/>
-          <path d="M103 99 Q115 87 128 96 Q140 105 151 96 Q164 86 176 96 Q190 106 201 96 Q211 91 217 99" fill="#f3c1ce"/>
-          <path d="M126 89 L126 65"/>
-          <path d="M160 86 L160 58"/>
-          <path d="M194 89 L194 65"/>
-          <path d="M121 61 Q126 52 131 61 Q126 70 121 61Z" fill="#e7a0b3"/>
-          <path d="M155 54 Q160 44 165 54 Q160 65 155 54Z" fill="#e7a0b3"/>
-          <path d="M189 61 Q194 52 199 61 Q194 70 189 61Z" fill="#e7a0b3"/>
-          <path d="M91 145 Q98 151 105 145 Q112 139 119 145"/>
-          <path d="M201 145 Q208 151 215 145 Q222 139 229 145"/>
-          <path d="M146 145 Q160 155 174 145"/>
-          <path d="M145 160 Q160 165 175 160"/>
-          <path d="M49 91 Q39 78 49 68 Q59 79 49 91Z"/>
-          <path d="M267 90 Q255 80 267 69 Q279 80 267 90Z"/>
-          <path d="M42 114 L48 114 M45 111 L45 117"/>
-          <path d="M275 115 L281 115 M278 112 L278 118"/>
-          <path d="M79 54 Q87 47 94 54 Q87 61 79 54Z" fill="#f1c1cb"/>
-          <path d="M224 52 Q232 45 239 52 Q232 59 224 52Z" fill="#f1c1cb"/>
-        </g>
-      </svg>
-    </div>
-
-    <div class="hero-caption">для тебе — з усією любов'ю ♡</div>
-
-    <a class="primary-link" href="#portrait">
-      ГОРТАЙ СВІЙ АЛЬБОМ <span>↓</span>
-    </a>
-
-    <div class="hero-side-note">цей день —<br>тільки твій</div>
-  </div>
-</header>
+<canvas id="confetti" aria-hidden="true"></canvas>
 
 <main>
-  <!-- ГОЛОВНЕ ФОТО -->
-  <section class="paper-section" id="portrait">
-    <div class="page portrait-section">
-      <div class="portrait-wrap">
-        <div class="polaroid">
-          <img src="IMG_6861.jpeg" alt="Святкова фотографія іменинниці">
-          <div class="polaroid-caption">маленька ти, велике щастя ♡</div>
-        </div>
-        <span class="doodle portrait-note">наймиліша!</span>
-      </div>
 
-      <div class="portrait-copy">
-        <div class="eyebrow">сторінка перша · про тебе</div>
-        <h2 class="hand">Сьогодні весь світ трохи рожевіший</h2>
-        <p>
-          Бо саме сьогодні святкує свій день людина, яка заслуговує
-          на найтепліші обійми, найщиріші слова та безліч маленьких див.
-        </p>
-        <p>
-          Нехай у твоєму житті завжди буде місце для радості,
-          улюблених людей, здійснених мрій і моментів,
-          які хочеться зберегти назавжди.
-        </p>
-        <div class="tiny-note">з любов'ю, для тебе ♡</div>
-      </div>
-    </div>
-  </section>
+  <div class="ribbon" aria-hidden="true">
+    <span>
+      ТВІЙ ДЕНЬ · ТВОЇ МРІЇ · ТВОЇ ЩАСЛИВІ ШІСТНАДЦЯТЬ
+    </span>
+  </div>
 
-  <!-- ОСОБИСТЕ ПРИВІТАННЯ -->
-  <section class="greeting-section">
-    <div class="page">
-      <div class="greeting-card">
-        <div class="eyebrow">кілька слів від серця</div>
-        <h2 class="hand">Моя люба імениннице ♡</h2>
+  <section class="hero">
 
-        <p>
-          Вітаю тебе з днем народження! Бажаю тобі безмежного щастя,
-          справжньої дружби, міцного здоров'я та безлічі причин усміхатися.
-          Нехай поруч завжди будуть люди, з якими можна бути собою,
-          сміятися до сліз і ділитися навіть найменшими секретами.
-        </p>
+    <p class="eyebrow">
+      Сьогодні світ трішечки рожевіший
+    </p>
 
-        <p>
-          Бажаю, щоб усі твої мрії потроху ставали реальністю,
-          щоб кожен новий день приносив щось хороше, а в серці
-          завжди жило відчуття, що ти дуже-дуже люблена.
-        </p>
+    <h1>
+      Настеньці<br>
+      — 16!
+    </h1>
 
-        <p>
-          Залишайся такою ж особливою. Нехай попереду буде багато
-          красивих історій, теплих зустрічей, несподіваних подарунків
-          і щасливих спогадів, які ми ще не раз переглядатимемо разом.
-        </p>
+    <p class="sub">
+      І все найкраще тільки починається.
+    </p>
 
-        <div class="greeting-signature">обіймаю міцно ♡</div>
-      </div>
-    </div>
-  </section>
+    <div class="hero-art">
 
-  <!-- ФОТОАЛЬБОМ -->
-  <section class="paper-section" id="memories">
-    <div class="page">
-      <div class="section-heading">
-        <div class="eyebrow">сторінки, які хочеться берегти</div>
-        <h2 class="hand">Наші маленькі спогади</h2>
-        <p>кожна фотографія — ціла історія, яку хочеться пам'ятати</p>
-      </div>
+      <svg
+        class="number"
+        viewBox="0 0 600 370"
+        role="img"
+        aria-label="Золоті святкові цифри 16"
+      >
+        <defs>
+          <linearGradient
+            id="gold"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+          >
+            <stop stop-color="#f9e6af"/>
+            <stop offset=".23" stop-color="#dab378"/>
+            <stop offset=".4" stop-color="#fff3c9"/>
+            <stop offset=".6" stop-color="#c89652"/>
+            <stop offset=".76" stop-color="#f9dfa0"/>
+            <stop offset="1" stop-color="#bc8f55"/>
+          </linearGradient>
+        </defs>
 
-      <div class="memories-grid">
-        <article class="memory">
-          <div class="tape"></div>
-          <div class="polaroid">
-            <img src="IMG_6861.jpeg" alt="Ніжний спогад про іменинницю">
-            <div class="polaroid-caption">така маленька ♡</div>
-          </div>
-          <div class="memory-note">і вже стільки світла навколо</div>
-          <div class="memory-date">наша історія · № 01</div>
-        </article>
-
-        <article class="memory">
-          <div class="tape"></div>
-          <div class="polaroid">
-            <img src="IMG_6861.jpeg" alt="Щаслива мить">
-            <div class="polaroid-caption">усмішка на мільйон</div>
-          </div>
-          <div class="memory-note">хочеться зупинити час на хвилинку</div>
-          <div class="memory-date">наша історія · № 02</div>
-        </article>
-
-        <article class="memory">
-          <div class="tape"></div>
-          <div class="polaroid">
-            <img src="IMG_6861.jpeg" alt="Теплий спогад">
-            <div class="polaroid-caption">найцінніші миті</div>
-          </div>
-          <div class="memory-note">це тільки початок великої історії ♡</div>
-          <div class="memory-date">наша історія · № 03</div>
-        </article>
-
-        <article class="memory">
-          <div class="tape"></div>
-          <div class="polaroid">
-            <img src="IMG_6861.jpeg" alt="Фото для сімейного альбому">
-            <div class="polaroid-caption">завжди будь щаслива</div>
-          </div>
-          <div class="memory-note">ще стільки всього попереду!</div>
-          <div class="memory-date">наша історія · № 04</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- КАЛЕНДАР -->
-  <section class="calendar-section">
-    <div class="page">
-      <div class="section-heading">
-        <div class="eyebrow">день, позначений сердечком</div>
-        <h2 class="hand">Твоя особлива дата</h2>
-      </div>
-
-      <div class="calendar">
-        <div class="calendar-top">
-          <span class="hand" id="calendarMonth">Твій місяць</span>
-          <small id="calendarYear">ОСОБЛИВИЙ РІК</small>
-        </div>
-        <div class="calendar-grid" id="calendarGrid"></div>
-        <div class="calendar-caption">цей день належить тобі ♡</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ЛИСТ -->
-  <section class="letter-section">
-    <div class="page">
-      <div class="section-heading">
-        <div class="eyebrow">прочитай, коли захочеться тепла</div>
-        <h2 class="hand">Лист для іменинниці</h2>
-      </div>
-
-      <div class="letter">
-        <div class="letter-content">
-          <h3>Моя дорога ♡</h3>
-
-          <p>
-            У цей особливий день хочу нагадати тобі, наскільки ти важлива.
-            Нехай у тебе завжди вистачає сміливості мріяти, сил рухатися
-            вперед і часу на все, що робить тебе щасливою.
-          </p>
-
-          <button class="letter-button" id="letterButton" type="button">
-            ВІДКРИТИ ЩЕ ОДИН СЕКРЕТ ♡
-          </button>
-
-          <div class="letter-hidden" id="letterHidden">
-            <p>
-              І навіть у звичайні дні пам'ятай: ти заслуговуєш на добро,
-              турботу та любов не лише сьогодні, а щодня.
-              Нехай поруч будуть ті, хто цінує тебе справжню.
-            </p>
-            <p>
-              Нехай цей рік подарує тобі нові улюблені пісні,
-              красиві заходи сонця, щирий сміх, здійснені бажання
-              та спогади, від яких на душі стає тепло.
-            </p>
-            <div class="greeting-signature">з днем народження, люба ♡</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ФІНАЛ -->
-  <footer class="final-section">
-    <div class="page">
-      <div class="final-photo">
-        <div class="polaroid">
-          <img src="IMG_6861.jpeg" alt="Маленька іменинниця">
-          <div class="polaroid-caption">наша зірочка</div>
-        </div>
-
-        <div class="wish-cloud">
-          нехай твої мрії знаходять шлях до здійснення ♡
-        </div>
-      </div>
-
-      <svg class="squiggle" viewBox="0 0 130 35" fill="none" aria-hidden="true">
-        <path d="M3 18 C18 -1 35 36 51 17 S80 0 91 17 S114 35 125 12 C131 -1 112 0 115 11 C117 19 128 17 126 8"
-          stroke="#c98c9b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+        <text
+          x="300"
+          y="320"
+          text-anchor="middle"
+          font-family="Georgia,serif"
+          font-size="365"
+          font-weight="bold"
+          fill="url(#gold)"
+          stroke="#dfbd83"
+          stroke-width="1"
+        >16</text>
       </svg>
 
-      <div class="eyebrow">і наостанок — найголовніше</div>
+      <img
+        class="cake"
+        src="https://nastenka-sweet-sixteen.morozmoroz123.chatgpt.site/assets/cake.png"
+        alt="Святковий торт із ніжним кремом, вишеньками й рожевими бантиками"
+        fetchpriority="high"
+      >
 
-      <h2 class="serif">
-        З днем народження,
-        <span id="finalName">люба моя!</span>
-      </h2>
+      <img
+        class="balloons"
+        src="https://nastenka-sweet-sixteen.morozmoroz123.chatgpt.site/assets/balloons.png"
+        alt="Рожеві повітряні кульки-серця та золоті зірочки"
+        fetchpriority="high"
+      >
 
-      <p class="final-text">
-        Будь щаслива, кохана, натхненна й оточена добром.
-        Нехай цей світ частіше дивує тебе приємностями,
-        а кожна нова сторінка життя буде ще красивішою за попередню.
-      </p>
+      <svg class="spark s1">
+        <use href="#spark"/>
+      </svg>
 
-      <div class="footer-note">з любов'ю, сьогодні й завжди ♡</div>
+      <svg class="spark s2">
+        <use href="#spark"/>
+      </svg>
 
-      <div class="doodle" style="left:7%;top:25%;font-size:34px">✧</div>
-      <div class="doodle" style="right:7%;bottom:20%;font-size:30px">♡</div>
+      <svg class="spark s3">
+        <use href="#spark"/>
+      </svg>
+
     </div>
+
+    <p class="hero-message">
+      Ця маленька сторінка — для тебе.<br>
+      З великими побажаннями, ніжністю<br>
+      і дрібкою святкової магії.
+    </p>
+
+    <a class="scroll" href="#letter">
+      Гортай, тут усе для тебе
+
+      <svg
+        viewBox="0 0 20 30"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path d="M10 0v28m-7-8 7 8 7-8"/>
+      </svg>
+    </a>
+
+  </section>
+
+  <section class="letter" id="letter">
+
+    <p class="eyebrow">
+      Дещо дуже особисте
+    </p>
+
+    <h2>
+      Тобі лист.<br>
+      <em>Від усього серця.</em>
+    </h2>
+
+    <div class="envelope">
+
+      <button
+        class="envelope-button"
+        id="letterToggle"
+        aria-expanded="false"
+        aria-controls="letterContent"
+        aria-label="Відкрити лист для Настеньки"
+      >
+        <span class="seal">Н</span>
+      </button>
+
+      <span class="open-hint" id="letterHint">
+        Торкнися конверта
+      </span>
+
+      <div
+        class="letter-paper"
+        id="letterContent"
+        hidden
+      >
+        <h3>Наша люба Настенько!</h3>
+
+        <p>
+          Тобі сьогодні шістнадцять. Такий красивий вік,
+          коли попереду стільки відкриттів, нових знайомств
+          і мрій, від яких сяють очі.
+        </p>
+
+        <p>
+          Бажаємо тобі сміливо бути собою. Обирати те,
+          що відгукується серцю. Зустрічати людей,
+          поруч із якими легко сміятися, мріяти
+          й навіть мовчати.
+        </p>
+
+        <p>
+          Нехай у твоєму житті буде багато обіймів,
+          щирих розмов, улюблених пісень і моментів,
+          які хочеться зберегти назавжди.
+          А любов і підтримка завжди будуть поруч.
+        </p>
+
+        <p>
+          Ти заслуговуєш на стільки прекрасного.
+          Нехай воно неодмінно станеться!
+        </p>
+
+        <p class="signature">
+          З любов’ю — твої найрідніші
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="wish-section">
+
+    <p class="eyebrow">
+      Кишенькові побажання
+    </p>
+
+    <h2>
+      Візьми із собою<br>
+      <em>у свої шістнадцять</em>
+    </h2>
+
+    <p class="wish-lead">
+      Обирай маленькі скарби.<br>
+      У кожному — дещо важливе для тебе.
+    </p>
+
+    <div class="wish-orbit">
+
+      <button
+        class="wish-star"
+        aria-pressed="false"
+        data-wish="Мрій так сміливо, ніби можливо все. А потім зроби перший маленький крок."
+      >
+        МРІЇ
+      </button>
+
+      <button
+        class="wish-heart"
+        aria-pressed="false"
+        data-wish="Нехай поруч будуть люди, які люблять тебе саме такою, яка ти є."
+      >
+        ЛЮБОВ
+      </button>
+
+      <button
+        class="wish-ticket"
+        aria-pressed="false"
+        data-wish="Збирай щасливі миті: спонтанні подорожі, теплі обійми й сміх до сліз."
+      >
+        щасливі миті
+      </button>
+
+      <button
+        class="wish-flower"
+        aria-pressed="false"
+        data-wish="Розквітай у своєму темпі. Тобі не потрібно поспішати, щоб бути особливою."
+      >
+        НІЖНІСТЬ
+      </button>
+
+    </div>
+
+    <p
+      class="wish-answer"
+      id="wishAnswer"
+      aria-live="polite"
+    >
+      Обери те, чого сьогодні хочеться найбільше.
+    </p>
+
+  </section>
+
+  <section class="photo-section">
+
+    <p class="eyebrow">
+      Те, що хочеться зберегти
+    </p>
+
+    <h2>
+      Твоя маленька<br>
+      <em>колекція щастя</em>
+    </h2>
+
+    <div class="film">
+
+      <label
+        class="photo"
+        aria-label="Додати перше фото"
+      >
+        <input
+          type="file"
+          accept="image/*"
+          data-photo="0"
+        >
+
+        <span class="placeholder">
+          <svg>
+            <use href="#camera"/>
+          </svg>
+
+          <span>Твій сміх</span>
+        </span>
+
+        <img
+          alt="Перша улюблена мить Настеньки"
+          hidden
+        >
+      </label>
+
+      <label
+        class="photo"
+        aria-label="Додати друге фото"
+      >
+        <input
+          type="file"
+          accept="image/*"
+          data-photo="1"
+        >
+
+        <span class="placeholder">
+          <svg>
+            <use href="#camera"/>
+          </svg>
+
+          <span>Твої люди</span>
+        </span>
+
+        <img
+          alt="Друга улюблена мить Настеньки"
+          hidden
+        >
+      </label>
+
+      <label
+        class="photo"
+        aria-label="Додати третє фото"
+      >
+        <input
+          type="file"
+          accept="image/*"
+          data-photo="2"
+        >
+
+        <span class="placeholder">
+          <svg>
+            <use href="#camera"/>
+          </svg>
+
+          <span>Твоє щастя</span>
+        </span>
+
+        <img
+          alt="Третя улюблена мить Настеньки"
+          hidden
+        >
+      </label>
+
+    </div>
+
+    <p class="photo-note">
+      Найкращі кадри — ті, на яких ти щаслива.
+    </p>
+
+    <small id="photoStatus" aria-live="polite">
+      Торкнися кадру, щоб додати улюблене фото.
+    </small>
+
+  </section>
+
+  <section class="quote-section">
+
+    <svg class="big-star" aria-hidden="true">
+      <use href="#spark"/>
+    </svg>
+
+    <blockquote>
+      Нехай у твоїх очах<br>
+      завжди буде <em>вогник,</em><br>
+      а в серці — місце<br>
+      для великої мрії.
+    </blockquote>
+
+    <p class="tiny">
+      З днем народження, наша зірочко
+    </p>
+
+  </section>
+
+  <section class="final">
+
+    <p class="eyebrow">
+      І ще одна маленька традиція
+    </p>
+
+    <h2>
+      Заплющ очі.<br>
+      <em>Загадай бажання.</em>
+    </h2>
+
+    <div class="final-art">
+      <img
+        src="https://nastenka-sweet-sixteen.morozmoroz123.chatgpt.site/assets/cake.png"
+        alt="Святковий торт зі свічками"
+        loading="lazy"
+      >
+    </div>
+
+    <button class="primary" id="magic">
+      Натисни для святкової магії
+    </button>
+
+    <p
+      class="wish-result"
+      id="magicResult"
+      aria-live="polite"
+    >
+      Нехай здійсниться саме те,<br>
+      про що ти зараз подумала.
+    </p>
+
+  </section>
+
+  <footer class="footer">
+    <b>Настенько, сяй!</b>
+    Твої прекрасні шістнадцять
   </footer>
+
 </main>
 
 <script>
-/* НАЛАШТУВАННЯ САЙТУ
-   Зміни ім'я, вік і дату в цьому об'єкті.
-   Для календаря вкажи справжню дату народження.
-*/
-const birthday = {
-  name: "Імениннице",
-  age: "",
-  day: 11,
-  month: 10,
-  year: 2026
-};
+const toggle = document.getElementById("letterToggle");
+const letter = document.getElementById("letterContent");
 
-document.title = `З днем народження, ${birthday.name}!`;
+toggle.addEventListener("click", () => {
+  const open =
+    toggle.getAttribute("aria-expanded") !== "true";
 
-document.getElementById("heroName").textContent = birthday.name;
-document.getElementById("finalName").textContent = birthday.name;
-document.getElementById("heroAge").textContent =
-  birthday.age ? `сьогодні тобі ${birthday.age} років` : "твій особливий день";
+  toggle.setAttribute("aria-expanded", String(open));
 
-/* КАЛЕНДАР */
-const monthNames = [
-  "Січень", "Лютий", "Березень", "Квітень",
-  "Травень", "Червень", "Липень", "Серпень",
-  "Вересень", "Жовтень", "Листопад", "Грудень"
-];
+  toggle.setAttribute(
+    "aria-label",
+    open
+      ? "Закрити лист для Настеньки"
+      : "Відкрити лист для Настеньки"
+  );
 
-const grid = document.getElementById("calendarGrid");
-const year = birthday.year;
-const month = birthday.month - 1;
+  letter.hidden = !open;
 
-document.getElementById("calendarMonth").textContent = monthNames[month];
-document.getElementById("calendarYear").textContent = year;
-
-const weekdays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"];
-
-weekdays.forEach(day => {
-  const cell = document.createElement("span");
-  cell.className = "weekday";
-  cell.textContent = day;
-  grid.appendChild(cell);
+  document.getElementById("letterHint").textContent =
+    open
+      ? "Лист відкрито. З любов’ю для тебе."
+      : "Торкнися конверта";
 });
 
-const firstDay = new Date(year, month, 1);
-const daysInMonth = new Date(year, month + 1, 0).getDate();
-const offset = (firstDay.getDay() + 6) % 7;
+document.querySelectorAll("[data-wish]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-wish]").forEach(other => {
+      other.setAttribute("aria-pressed", "false");
+    });
 
-for (let i = 0; i < offset; i++) {
-  const empty = document.createElement("span");
-  empty.setAttribute("aria-hidden", "true");
-  grid.appendChild(empty);
+    button.setAttribute("aria-pressed", "true");
+
+    document.getElementById("wishAnswer").textContent =
+      button.dataset.wish;
+  });
+});
+
+document.querySelectorAll("[data-photo]").forEach(input => {
+  const image = input.parentElement.querySelector("img");
+  const key = "nastenka-photo-" + input.dataset.photo;
+
+  try {
+    const saved = localStorage.getItem(key);
+
+    if (saved) {
+      image.src = saved;
+      image.hidden = false;
+    }
+  } catch (error) {}
+
+  input.addEventListener("change", () => {
+    const file = input.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      document.getElementById("photoStatus").textContent =
+        "Обери, будь ласка, файл зображення.";
+      return;
+    }
+
+    const source = new Image();
+    const url = URL.createObjectURL(file);
+
+    source.onload = () => {
+      const photoCanvas = document.createElement("canvas");
+
+      const scale = Math.min(
+        1,
+        900 / Math.max(source.width, source.height)
+      );
+
+      photoCanvas.width = Math.round(source.width * scale);
+      photoCanvas.height = Math.round(source.height * scale);
+
+      photoCanvas.getContext("2d").drawImage(
+        source,
+        0,
+        0,
+        photoCanvas.width,
+        photoCanvas.height
+      );
+
+      const data = photoCanvas.toDataURL("image/jpeg", .85);
+
+      image.src = data;
+      image.hidden = false;
+
+      URL.revokeObjectURL(url);
+
+      try {
+        localStorage.setItem(key, data);
+
+        document.getElementById("photoStatus").textContent =
+          "Мить збережено у цьому браузері. Торкнися кадру, щоб змінити фото.";
+      } catch (error) {
+        document.getElementById("photoStatus").textContent =
+          "Фото додано. Воно буде тут до закриття сторінки.";
+      }
+    };
+
+    source.onerror = () => {
+      URL.revokeObjectURL(url);
+
+      document.getElementById("photoStatus").textContent =
+        "Не вдалося відкрити фото. Спробуй JPG або PNG.";
+    };
+
+    source.src = url;
+  });
+});
+
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+let pieces = [];
+let frame = 0;
+let end = 0;
+
+const reduced = matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
+
+function size() {
+  canvas.width = innerWidth * devicePixelRatio;
+  canvas.height = innerHeight * devicePixelRatio;
+
+  ctx.setTransform(
+    devicePixelRatio,
+    0,
+    0,
+    devicePixelRatio,
+    0,
+    0
+  );
 }
 
-for (let day = 1; day <= daysInMonth; day++) {
-  const cell = document.createElement("span");
-  cell.textContent = day;
+addEventListener("resize", size);
+size();
 
-  if (day === birthday.day) {
-    cell.className = "birthday-day";
-    cell.setAttribute("aria-label", `День народження, ${day} ${monthNames[month]}`);
+function draw(time) {
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+  pieces = pieces.filter(piece => {
+    return piece.y < innerHeight + 30;
+  });
+
+  for (const piece of pieces) {
+    piece.x += piece.vx;
+    piece.y += piece.vy;
+    piece.vy += .035;
+    piece.angle += piece.spin;
+
+    ctx.save();
+    ctx.translate(piece.x, piece.y);
+    ctx.rotate(piece.angle);
+    ctx.fillStyle = piece.color;
+
+    if (piece.star) {
+      ctx.beginPath();
+
+      for (let i = 0; i < 10; i++) {
+        const angle = i * Math.PI / 5 - Math.PI / 2;
+        const radius = i % 2 ? 3 : 7;
+
+        ctx.lineTo(
+          Math.cos(angle) * radius,
+          Math.sin(angle) * radius
+        );
+      }
+
+      ctx.closePath();
+      ctx.fill();
+    } else {
+      ctx.fillRect(
+        -piece.w / 2,
+        -piece.h / 2,
+        piece.w,
+        piece.h
+      );
+    }
+
+    ctx.restore();
   }
 
-  grid.appendChild(cell);
+  if (time < end && pieces.length) {
+    frame = requestAnimationFrame(draw);
+  } else {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    frame = 0;
+  }
 }
 
-/* ВІДКРИТИ ЛИСТ */
-const letterButton = document.getElementById("letterButton");
-const letterHidden = document.getElementById("letterHidden");
+document.getElementById("magic").addEventListener("click", () => {
+  document.getElementById("magicResult").textContent =
+    "Бажання загадано! Нехай твої шістнадцять будуть сповнені щасливих див.";
 
-letterButton.addEventListener("click", () => {
-  const isOpen = letterHidden.classList.toggle("show");
+  if (reduced.matches) return;
 
-  letterButton.textContent = isOpen
-    ? "ЗАКРИТИ ЛИСТ ↑"
-    : "ВІДКРИТИ ЩЕ ОДИН СЕКРЕТ ♡";
+  cancelAnimationFrame(frame);
 
-  letterButton.setAttribute("aria-expanded", String(isOpen));
+  pieces = Array.from({ length: 180 }, () => ({
+    x: innerWidth / 2,
+    y: innerHeight * .6,
+    vx: (Math.random() - .5) * 13,
+    vy: -Math.random() * 13 - 3,
+    w: Math.random() * 6 + 4,
+    h: Math.random() * 7 + 3,
+    angle: Math.random() * 6,
+    spin: (Math.random() - .5) * .12,
+    color: [
+      "#e98ba5",
+      "#b72a55",
+      "#dec180",
+      "#fff4d9",
+      "#d6a86b"
+    ][Math.floor(Math.random() * 5)],
+    star: Math.random() > .65
+  }));
+
+  end = performance.now() + 6500;
+  frame = requestAnimationFrame(draw);
 });
-
-/* ПЛАВНА ПОЯВА ЕЛЕМЕНТІВ */
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.animate(
-          [
-            { opacity: 0, transform: "translateY(13px)" },
-            { opacity: 1, transform: "translateY(0)" }
-          ],
-          { duration: 650, easing: "ease-out", fill: "both" }
-        );
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll(
-    ".memory, .greeting-card, .calendar, .letter, .portrait-copy"
-  ).forEach(element => observer.observe(element));
-}
 </script>
 
 </body>
 </html>
-
