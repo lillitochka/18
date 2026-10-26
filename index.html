@@ -1,3558 +1,502 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>З 18-річчям!</title>
-<meta name="theme-color" content="#f8dbe6">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Marck+Script&display=swap"
-rel="stylesheet"
->
-
-<style>
-
-:root{
-  --bg:#fffaf8;
-  --paper:#fffefc;
-  --rose:#f48bab;
-  --hot:#d9487d;
-  --wine:#8d435b;
-  --gold:#d4a45a;
-  --ink:#4f4146;
-  --soft-shadow:0 25px 70px rgba(141,67,91,.12);
-  --card-shadow:0 16px 40px rgba(141,67,91,.10);
-  --radius:34px;
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  color:var(--ink);
-  font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-
-  background:
-    radial-gradient(circle at 10% 10%, rgba(252,197,215,.40), transparent 23%),
-    radial-gradient(circle at 85% 8%, rgba(255,231,193,.45), transparent 18%),
-    radial-gradient(circle at 50% 100%, rgba(246,205,218,.22), transparent 25%),
-    var(--bg);
-
-  overflow-x:hidden;
-}
-
-img{
-  display:block;
-  max-width:100%;
-}
-
-.page{
-  position:relative;
-  overflow:hidden;
-}
-
-.wrap{
-  width:min(1180px, calc(100% - 28px));
-  margin:0 auto;
-}
-
-.section{
-  padding:22px 0;
-}
-
-
-/* ПЛАВНОЕ ПОЯВЛЕНИЕ */
-
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal.visible{
-  opacity:1;
-  transform:none;
-}
-
-
-/* =========================
-   ПЛАВАЮЩИЕ ШАРИКИ
-========================= */
-
-.floating-balloon{
-
-  position:absolute;
-
-  width:92px;
-  height:118px;
-
-  border-radius:50% 50% 48% 48%;
-
-  background:
-    linear-gradient(
-      145deg,
-      #ffdbe7 0%,
-      #f9a9c1 52%,
-      #e66d95 100%
-    );
-
-  box-shadow:
-    inset -16px -18px 24px rgba(149,58,89,.16),
-    inset 14px 10px 18px rgba(255,255,255,.50),
-    0 14px 25px rgba(222,113,151,.16);
-
-  animation:float 8s ease-in-out infinite;
-
-  z-index:0;
-
-  opacity:.68;
-}
-
-.floating-balloon::before{
-
-  content:'';
-
-  position:absolute;
-
-  width:18px;
-  height:18px;
-
-  left:50%;
-  bottom:-7px;
-
-  transform:
-    translateX(-50%)
-    rotate(45deg);
-
-  background:#ef96b3;
-
-  border-radius:3px;
-}
-
-.floating-balloon::after{
-
-  content:'';
-
-  position:absolute;
-
-  width:1.5px;
-  height:120px;
-
-  background:
-    rgba(194,149,161,.8);
-
-  left:50%;
-  top:110px;
-}
-
-.bal1{
-  top:110px;
-  left:-20px;
-  animation-delay:-1s;
-}
-
-.bal2{
-  top:620px;
-  right:-18px;
-  width:80px;
-  height:104px;
-  animation-delay:-3s;
-}
-
-.bal3{
-  top:1450px;
-  left:2vw;
-  width:72px;
-  height:92px;
-  animation-delay:-2s;
-}
-
-.bal4{
-  top:2320px;
-  right:5vw;
-  width:110px;
-  height:136px;
-  animation-delay:-5s;
-}
-
-.bal5{
-  top:3200px;
-  left:-10px;
-  width:84px;
-  height:108px;
-  animation-delay:-4.5s;
-}
-
-@keyframes float{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-18px);
-  }
-
-}
-
-
-/* =========================
-   ВЕРХНИЙ БЛОК
-========================= */
-
-.hero{
-  position:relative;
-  padding:30px 0 34px;
-}
-
-.topbar{
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-
-  padding:8px 0 18px;
-}
-
-.brand{
-
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  font-weight:800;
-
-  letter-spacing:.08em;
-
-  font-size:12px;
-
-  text-transform:uppercase;
-
-  color:#a66d81;
-}
-
-.brand-dot{
-
-  width:10px;
-  height:10px;
-
-  border-radius:50%;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--rose),
-      #ffd38b
-    );
-}
-
-.badge{
-
-  border:
-    1px solid
-    rgba(212,164,90,.35);
-
-  padding:10px 14px;
-
-  border-radius:999px;
-
-  background:
-    rgba(255,255,255,.7);
-
-  backdrop-filter:
-    blur(8px);
-
-  font-size:12px;
-
-  font-weight:700;
-
-  color:#9a7080;
-}
-
-.hero-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    1.02fr .98fr;
-
-  gap:22px;
-
-  align-items:start;
-}
-
-.hero-copy{
-
-  position:relative;
-
-  z-index:1;
-
-  padding-top:20px;
-}
-
-.overline{
-
-  font-size:12px;
-
-  letter-spacing:.26em;
-
-  text-transform:uppercase;
-
-  font-weight:800;
-
-  color:#b17c89;
-
-  margin-bottom:18px;
-}
-
-.title{
-
-  margin:0;
-
-  font-size:
-    clamp(52px,9vw,92px);
-
-  line-height:.88;
-
-  letter-spacing:-.04em;
-
-  color:var(--hot);
-
-  font-weight:800;
-}
-
-.script{
-
-  font-family:
-    'Marck Script',
-    cursive;
-
-  color:#bf4f76;
-
-  font-weight:400;
-
-  font-size:
-    clamp(48px,8vw,76px);
-
-  line-height:.95;
-}
-
-.subtitle{
-
-  margin:20px 0 0;
-
-  max-width:560px;
-
-  font-size:17px;
-
-  line-height:1.8;
-
-  color:#6d5a62;
-}
-
-.chips{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin-top:20px;
-}
-
-.chip{
-
-  padding:12px 16px;
-
-  border-radius:999px;
-
-  background:
-    rgba(255,255,255,.78);
-
-  border:
-    1px solid
-    rgba(230,140,172,.28);
-
-  box-shadow:
-    0 8px 24px
-    rgba(141,67,91,.08);
-
-  font-size:14px;
-
-  font-weight:700;
-
-  color:#865869;
-}
-
-
-/* =========================
-   ГЛАВНАЯ ФОТОГРАФИЯ
-========================= */
-
-.hero-card{
-
-  position:relative;
-
-  border-radius:42px;
-
-  overflow:hidden;
-
-  min-height:720px;
-
-  box-shadow:
-    var(--soft-shadow);
-
-  background:#f3d7df;
-}
-
-.hero-card img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  object-position:
-    center top;
-
-  filter:
-    saturate(1.02)
-    contrast(1.02);
-}
-
-.hero-glass{
-
-  position:absolute;
-
-  left:18px;
-  right:18px;
-  bottom:18px;
-
-  background:
-    rgba(255,255,255,.68);
-
-  backdrop-filter:
-    blur(16px);
-
-  border:
-    1px solid
-    rgba(255,255,255,.55);
-
-  border-radius:30px;
-
-  padding:
-    18px 18px 16px;
-
-  box-shadow:
-    0 12px 30px
-    rgba(68,32,43,.10);
-}
-
-.hero-glass strong{
-
-  display:block;
-
-  font-size:28px;
-
-  line-height:1.05;
-
-  color:#c93f73;
-}
-
-.hero-glass span{
-
-  display:block;
-
-  margin-top:8px;
-
-  font-size:14px;
-
-  line-height:1.6;
-
-  color:#6f5f64;
-}
-
-.mini-tag{
-
-  position:absolute;
-
-  top:16px;
-
-  right:16px;
-
-  padding:12px 14px;
-
-  border-radius:22px;
-
-  background:
-    rgba(255,250,251,.9);
-
-  box-shadow:
-    var(--card-shadow);
-
-  font-size:13px;
-
-  font-weight:800;
-
-  color:#a65a76;
-
-  transform:
-    rotate(4deg);
-
-  z-index:3;
-}
-
-.sticker{
-
-  position:absolute;
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffe7ef,
-      #ffd8c7
-    );
-
-  color:#be4d77;
-
-  border:
-    1px solid
-    rgba(255,255,255,.65);
-
-  box-shadow:
-    0 15px 40px
-    rgba(165,82,113,.14);
-
-  z-index:4;
-}
-
-.sticker.one{
-
-  width:122px;
-
-  height:122px;
-
-  border-radius:38px;
-
-  left:-18px;
-
-  bottom:130px;
-
-  transform:
-    rotate(-12deg);
-
-  font-size:20px;
-
-  font-weight:800;
-
-  line-height:1.1;
-
-  text-align:center;
-
-  padding:10px;
-}
-
-.sticker.two{
-
-  width:150px;
-
-  height:76px;
-
-  border-radius:26px;
-
-  left:180px;
-
-  bottom:-10px;
-
-  transform:
-    rotate(-6deg);
-
-  font-size:16px;
-
-  font-weight:700;
-
-  padding:
-    10px 14px;
-
-  text-align:center;
-}
-
-
-/* =========================
-   ТЕКСТ + ФОТО
-========================= */
-
-.editorial{
-
-  margin-top:30px;
-
-  display:grid;
-
-  grid-template-columns:
-    1.06fr .94fr;
-
-  gap:22px;
-}
-
-.card{
-
-  position:relative;
-
-  border-radius:
-    var(--radius);
-
-  background:
-    var(--paper);
-
-  box-shadow:
-    var(--card-shadow);
-
-  overflow:hidden;
-}
-
-.editorial-left{
-  padding:28px;
-}
-
-.note{
-
-  display:inline-block;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff3f7,
-      #ffe0e8
-    );
-
-  color:#bd4b75;
-
-  padding:10px 14px;
-
-  border-radius:999px;
-
-  font-size:12px;
-
-  font-weight:800;
-
-  letter-spacing:.08em;
-
-  text-transform:uppercase;
-}
-
-.editorial-left h2{
-
-  margin:16px 0 10px;
-
-  font-size:
-    clamp(34px,5vw,54px);
-
-  line-height:.95;
-
-  color:var(--wine);
-}
-
-.editorial-left p{
-
-  font-size:16px;
-
-  line-height:1.85;
-
-  color:#695a5f;
-
-  margin:0 0 20px;
-}
-
-.list{
-
-  display:grid;
-
-  gap:10px;
-
-  margin-top:16px;
-}
-
-.list-item{
-
-  display:flex;
-
-  align-items:flex-start;
-
-  gap:12px;
-
-  padding:14px 16px;
-
-  border-radius:22px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #fff,
-      #fff8fb
-    );
-}
-
-.list-item .emoji{
-
-  font-size:22px;
-
-  line-height:1;
-}
-
-.list-item b{
-
-  display:block;
-
-  margin-bottom:4px;
-
-  color:#925168;
-}
-
-.list-item span{
-
-  font-size:14px;
-
-  color:#6e6064;
-
-  line-height:1.6;
-}
-
-.editorial-right{
-  padding:14px;
-}
-
-.editorial-photo{
-
-  height:100%;
-
-  min-height:540px;
-
-  position:relative;
-
-  border-radius:28px;
-
-  overflow:hidden;
-}
-
-.editorial-photo img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  object-position:center;
-}
-
-.tilt{
-
-  position:absolute;
-
-  right:18px;
-
-  top:18px;
-
-  width:170px;
-
-  background:
-    rgba(255,255,255,.88);
-
-  backdrop-filter:
-    blur(14px);
-
-  border-radius:26px;
-
-  padding:
-    14px 14px 16px;
-
-  box-shadow:
-    0 14px 35px
-    rgba(74,32,46,.12);
-
-  transform:
-    rotate(5deg);
-}
-
-.tilt .small{
-
-  font-size:11px;
-
-  letter-spacing:.16em;
-
-  text-transform:uppercase;
-
-  color:#b27a89;
-
-  font-weight:800;
-}
-
-.tilt strong{
-
-  display:block;
-
-  margin-top:7px;
-
-  font-size:18px;
-
-  color:#b74073;
-
-  line-height:1.25;
-}
-
-.tilt p{
-
-  margin:8px 0 0;
-
-  font-size:13px;
-
-  line-height:1.6;
-
-  color:#6e6065;
-}
-
-
-/* =========================
-   ЗАГОЛОВКИ
-========================= */
-
-.heading-center{
-
-  text-align:center;
-
-  padding:
-    18px 0 6px;
-}
-
-.heading-center .eyebrow{
-
-  font-size:12px;
-
-  letter-spacing:.22em;
-
-  text-transform:uppercase;
-
-  font-weight:800;
-
-  color:#b17d8a;
-}
-
-.heading-center h2{
-
-  margin:14px 0 0;
-
-  font-size:
-    clamp(34px,6vw,60px);
-
-  line-height:1;
-
-  color:var(--hot);
-}
-
-.heading-center .script2{
-
-  font-family:
-    'Marck Script',
-    cursive;
-
-  color:#91506a;
-
-  font-size:
-    clamp(36px,5vw,54px);
-
-  font-weight:400;
-}
-
-
-/* =========================
-   ФОТОПЛЕНКА
-========================= */
-
-.film-section{
-  padding-top:10px;
-}
-
-.film{
-
-  margin-top:22px;
-
-  background:#231a1d;
-
-  border-radius:34px;
-
-  padding:
-    18px 18px 24px;
-
-  box-shadow:
-    var(--soft-shadow);
-}
-
-.film-strip{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(
-      5,
-      minmax(220px,1fr)
-    );
-
-  gap:14px;
-
-  overflow:auto;
-
-  padding-bottom:4px;
-}
-
-.film-frame{
-
-  min-width:220px;
-
-  background:#111;
-
-  border-radius:24px;
-
-  padding:12px;
-
-  position:relative;
-
-  box-shadow:
-    0 10px 28px
-    rgba(0,0,0,.25);
-}
-
-.film-frame::before,
-.film-frame::after{
-
-  content:'';
-
-  position:absolute;
-
-  left:10px;
-
-  right:10px;
-
-  height:10px;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 12px,
-      rgba(255,255,255,.9) 12px 24px
-    );
-
-  opacity:.9;
-
-  border-radius:3px;
-}
-
-.film-frame::before{
-  top:8px;
-}
-
-.film-frame::after{
-  bottom:8px;
-}
-
-.film-frame .inner{
-
-  border-radius:18px;
-
-  overflow:hidden;
-
-  height:350px;
-
-  background:#333;
-
-  margin:18px 0;
-}
-
-.film-frame img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-}
-
-.frame-cap{
-
-  color:#f7dce5;
-
-  font-size:13px;
-
-  line-height:1.6;
-
-  padding:
-    0 2px 2px;
-}
-
-
-/* =========================
-   PINTEREST КОЛЛАЖ
-========================= */
-
-.collage{
-
-  margin-top:26px;
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr 1fr;
-
-  gap:18px;
-
-  align-items:start;
-}
-
-.pin{
-
-  background:#fff;
-
-  border-radius:30px;
-
-  padding:12px;
-
-  box-shadow:
-    var(--card-shadow);
-}
-
-.pin img{
-
-  border-radius:24px;
-
-  width:100%;
-
-  height:420px;
-
-  object-fit:cover;
-}
-
-.pin h3{
-
-  margin:
-    14px 8px 6px;
-
-  font-size:20px;
-
-  color:#99536b;
-}
-
-.pin p{
-
-  margin:
-    0 8px 10px;
-
-  font-size:14px;
-
-  line-height:1.7;
-
-  color:#736268;
-}
-
-.pin.tall img{
-  height:560px;
-}
-
-.pin.short img{
-  height:300px;
-}
-
-
-/* =========================
-   ПОЖЕЛАНИЯ
-========================= */
-
-.quote-block{
-
-  margin-top:18px;
-
-  padding:
-    34px 28px;
-
-  border-radius:36px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff3f7,
-      #fff8ef
-    );
-
-  box-shadow:
-    var(--card-shadow);
-
-  display:grid;
-
-  grid-template-columns:
-    1.2fr .8fr;
-
-  gap:22px;
-
-  align-items:center;
-}
-
-.quote-block h3{
-
-  margin:
-    0 0 14px;
-
-  font-size:
-    clamp(32px,5vw,52px);
-
-  line-height:.98;
-
-  color:#c24173;
-}
-
-.quote-block p{
-
-  margin:0;
-
-  font-size:17px;
-
-  line-height:1.85;
-
-  color:#6d5d62;
-}
-
-.quote-card{
-
-  background:
-    rgba(255,255,255,.72);
-
-  backdrop-filter:
-    blur(14px);
-
-  border-radius:28px;
-
-  padding:20px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.58);
-}
-
-.quote-card .caption{
-
-  font-size:12px;
-
-  letter-spacing:.18em;
-
-  text-transform:uppercase;
-
-  color:#b38490;
-
-  font-weight:800;
-}
-
-.quote-card ul{
-
-  padding:0;
-
-  margin:
-    14px 0 0;
-
-  list-style:none;
-
-  display:grid;
-
-  gap:12px;
-}
-
-.quote-card li{
-
-  display:flex;
-
-  gap:10px;
-
-  align-items:flex-start;
-
-  font-size:14px;
-
-  line-height:1.55;
-
-  color:#6e5e63;
-}
-
-.quote-card li span:first-child{
-
-  font-size:18px;
-
-  line-height:1;
-}
-
-
-/* =========================
-   ГАЛЕРЕЯ
-========================= */
-
-.gallery-wrap{
-  padding-top:8px;
-}
-
-.gallery{
-
-  margin-top:22px;
-
-  display:grid;
-
-  grid-template-columns:
-    1.1fr .9fr;
-
-  gap:20px;
-}
-
-.gallery-main{
-
-  height:710px;
-
-  border-radius:36px;
-
-  overflow:hidden;
-
-  box-shadow:
-    var(--soft-shadow);
-}
-
-.gallery-main img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  object-position:center;
-}
-
-.gallery-side{
-
-  display:grid;
-
-  gap:20px;
-}
-
-.gallery-side .cardimg{
-
-  height:345px;
-
-  border-radius:36px;
-
-  overflow:hidden;
-
-  box-shadow:
-    var(--card-shadow);
-}
-
-.gallery-side .cardimg img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-}
-
-.overlay-label{
-
-  position:absolute;
-
-  left:16px;
-
-  bottom:16px;
-
-  right:16px;
-
-  border-radius:22px;
-
-  padding:
-    14px 16px;
-
-  background:
-    rgba(255,255,255,.75);
-
-  backdrop-filter:
-    blur(12px);
-
-  font-weight:700;
-
-  color:#7f5864;
-
-  line-height:1.55;
-}
-
-
-/* =========================
-   МАЛЕНЬКИЕ КАРТОЧКИ
-========================= */
-
-.wishes-grid{
-
-  margin-top:24px;
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:16px;
-}
-
-.wish{
-
-  padding:
-    20px 18px;
-
-  border-radius:28px;
-
-  background:#fff;
-
-  box-shadow:
-    var(--card-shadow);
-
-  text-align:center;
-}
-
-.wish .ico{
-
-  font-size:28px;
-
-  margin-bottom:10px;
-}
-
-.wish h4{
-
-  margin:
-    0 0 8px;
-
-  font-size:18px;
-
-  color:#9b5270;
-}
-
-.wish p{
-
-  margin:0;
-
-  font-size:14px;
-
-  line-height:1.65;
-
-  color:#6f6266;
-}
-
-
-/* =========================
-   ФИНАЛ
-========================= */
-
-.finale{
-
-  margin:
-    28px auto 40px;
-
-  position:relative;
-
-  border-radius:42px;
-
-  overflow:hidden;
-
-  background:
-    linear-gradient(
-      125deg,
-      rgba(255,239,244,.95),
-      rgba(255,248,240,.95)
-    );
-
-  box-shadow:
-    var(--soft-shadow);
-}
-
-.finale-grid{
-
-  display:grid;
-
-  grid-template-columns:
-    .92fr 1.08fr;
-
-  gap:0;
-
-  align-items:stretch;
-}
-
-.finale-photo{
-
-  min-height:560px;
-
-  position:relative;
-}
-
-.finale-photo img{
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  object-position:
-    center top;
-}
-
-.finale-copy{
-
-  padding:
-    44px 34px 36px;
-}
-
-.finale-copy .eyebrow{
-
-  font-size:12px;
-
-  letter-spacing:.22em;
-
-  text-transform:uppercase;
-
-  color:#b48390;
-
-  font-weight:800;
-}
-
-.finale-copy h2{
-
-  margin:
-    16px 0 14px;
-
-  font-size:
-    clamp(34px,5vw,58px);
-
-  line-height:.95;
-
-  color:#c53d72;
-}
-
-.finale-copy p{
-
-  margin:
-    0 0 22px;
-
-  font-size:16px;
-
-  line-height:1.85;
-
-  color:#6c5c62;
-}
-
-.pill-row{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:10px;
-
-  margin:
-    20px 0 26px;
-}
-
-.pill{
-
-  padding:
-    11px 14px;
-
-  border-radius:999px;
-
-  background:#fff;
-
-  box-shadow:
-    0 8px 24px
-    rgba(141,67,91,.08);
-
-  font-size:13px;
-
-  font-weight:700;
-
-  color:#8a586a;
-}
-
-
-/* =========================
-   КНОПКА
-========================= */
-
-.cta{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:10px;
-
-  padding:
-    17px 22px;
-
-  border:none;
-
-  cursor:pointer;
-
-  border-radius:999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ef7ca3,
-      #cf3d71
-    );
-
-  color:#fff;
-
-  font-weight:800;
-
-  box-shadow:
-    0 16px 34px
-    rgba(207,61,113,.28);
-
-  font-size:15px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.cta:hover{
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 20px 38px
-    rgba(207,61,113,.35);
-}
-
-.cta:active{
-
-  transform:
-    translateY(1px);
-}
-
-.cta::after{
-
-  content:'';
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    linear-gradient(
-      110deg,
-      transparent 20%,
-      rgba(255,255,255,.6) 48%,
-      transparent 75%
-    );
-
-  transform:
-    translateX(-120%);
-}
-
-.cta:hover::after{
-
-  animation:
-    buttonShine .8s ease;
-}
-
-@keyframes buttonShine{
-
-  to{
-    transform:
-      translateX(120%);
-  }
-
-}
-
-.footer{
-
-  text-align:center;
-
-  padding:
-    10px 0 34px;
-
-  color:#9c8790;
-
-  font-size:12px;
-
-  line-height:1.7;
-}
-
-
-/* =========================
-   МАГИЯ
-========================= */
-
-.sparkles{
-
-  position:fixed;
-
-  inset:0;
-
-  pointer-events:none;
-
-  z-index:99999;
-
-  overflow:hidden;
-}
-
-
-/* сердечки и блестки */
-
-.magic-piece{
-
-  position:fixed;
-
-  pointer-events:none;
-
-  z-index:99999;
-
-  will-change:
-    transform,
-    opacity;
-
-  animation:
-    magicFly
-    1.5s
-    ease-out
-    forwards;
-}
-
-@keyframes magicFly{
-
-  0%{
-
-    transform:
-      translate(0,0)
-      scale(.3)
-      rotate(0deg);
-
-    opacity:0;
-  }
-
-  12%{
-    opacity:1;
-  }
-
-  100%{
-
-    transform:
-      translate(
-        var(--x),
-        var(--y)
-      )
-      scale(
-        var(--scale)
-      )
-      rotate(
-        var(--rotate)
-      );
-
-    opacity:0;
-  }
-
-}
-
-
-/* частицы фейерверка */
-
-.firework-dot{
-
-  position:fixed;
-
-  width:8px;
-
-  height:8px;
-
-  border-radius:50%;
-
-  pointer-events:none;
-
-  z-index:99999;
-
-  animation:
-    fireworkExplode
-    1.2s
-    ease-out
-    forwards;
-}
-
-@keyframes fireworkExplode{
-
-  0%{
-
-    transform:
-      translate(0,0)
-      scale(.4);
-
-    opacity:1;
-  }
-
-  100%{
-
-    transform:
-      translate(
-        var(--fx),
-        var(--fy)
-      )
-      scale(0);
-
-    opacity:0;
-  }
-
-}
-
-
-/* мобильная версия */
-
-@media(max-width:1000px){
-
-  .hero-grid,
-  .editorial,
-  .quote-block,
-  .gallery,
-  .finale-grid{
-
-    grid-template-columns:1fr;
-  }
-
-  .hero-card{
-
-    min-height:640px;
-  }
-
-  .editorial-photo{
-
-    min-height:420px;
-  }
-
-  .gallery-main{
-
-    height:520px;
-  }
-
-  .collage{
-
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-}
-
-@media(max-width:720px){
-
-  .wrap{
-
-    width:
-      min(
-        100% - 18px,
-        1180px
-      );
-  }
-
-  .hero{
-
-    padding-top:12px;
-  }
-
-  .topbar{
-
-    align-items:flex-start;
-
-    flex-direction:column;
-  }
-
-  .title{
-
-    font-size:52px;
-  }
-
-  .script{
-
-    font-size:48px;
-  }
-
-  .subtitle{
-
-    font-size:15px;
-  }
-
-  .hero-card{
-
-    min-height:520px;
-
-    border-radius:30px;
-  }
-
-  .hero-glass strong{
-
-    font-size:24px;
-  }
-
-  .section{
-
-    padding:
-      14px 0;
-  }
-
-  .editorial-left,
-  .finale-copy{
-
-    padding:
-      24px 18px;
-  }
-
-  .editorial-right{
-
-    padding:10px;
-  }
-
-  .editorial-photo{
-
-    min-height:360px;
-  }
-
-  .quote-block{
-
-    padding:
-      26px 18px;
-  }
-
-  .wishes-grid{
-
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .collage{
-
-    grid-template-columns:1fr;
-  }
-
-  .pin img,
-  .pin.tall img,
-  .pin.short img{
-
-    height:360px;
-  }
-
-  .film-strip{
-
-    grid-template-columns:
-      repeat(5,76vw);
-  }
-
-  .film-frame{
-
-    min-width:76vw;
-  }
-
-  .film-frame .inner{
-
-    height:300px;
-  }
-
-  .gallery-main{
-
-    height:430px;
-  }
-
-  .gallery-side .cardimg{
-
-    height:260px;
-  }
-
-  .finale-photo{
-
-    min-height:380px;
-  }
-
-  .floating-balloon{
-
-    opacity:.42;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>З Днем Народження, Машка! ✨❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f6f0ea;
+      --card-bg: #ffffff;
+      --red-accent: #b31217;
+      --red-hover: #8f0c11;
+      --text-dark: #1f1f1f;
+      --text-muted: #666666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    .canvas-container {
+      width: 100%;
+      max-width: 430px;
+      background-color: var(--bg-color);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 40px;
+    }
+
+    /* Marquee Top */
+    .marquee-container {
+      background: var(--red-accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 6px 0;
+      letter-spacing: 1px;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      animation: marquee 12s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 30px 20px 10px;
+      text-align: center;
+    }
+
+    .curved-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--red-accent);
+      font-size: 2.2rem;
+      margin-bottom: -15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-cutout-wrapper {
+      position: relative;
+      width: 240px;
+      height: 320px;
+      margin: 0 auto;
+    }
+
+    .hero-cutout-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+    }
+
+    .text-sticker-left {
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%) rotate(-90deg);
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: var(--red-accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .text-sticker-right {
+      position: absolute;
+      top: 55%;
+      right: -15px;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: 'Caveat', cursive;
+      font-size: 2.3rem;
+      color: var(--red-accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .top-heart {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      width: 35px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+
+    /* Red Action Button */
+    .btn-container {
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    .red-btn {
+      background: var(--red-accent);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 16px 30px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(179, 18, 23, 0.3);
+      transition: all 0.2s ease;
+      letter-spacing: 1px;
+    }
+
+    .red-btn:hover {
+      background: var(--red-hover);
+      transform: translateY(-2deg);
+    }
+
+    /* Section: Wishes & Telegram Bubble */
+    .wishes-section {
+      padding: 20px;
+      position: relative;
+    }
+
+    .section-header {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--red-accent);
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tg-bubble {
+      background: #232e3c;
+      color: white;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .tg-pushpin {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      font-size: 1.4rem;
+    }
+
+    .tg-time {
+      font-size: 0.7rem;
+      color: #7f91a4;
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .glitter-heart {
+      width: 22px;
+      vertical-align: middle;
+    }
+
+    /* Section: Rich Grandma Meme */
+    .grandma-section {
+      margin: 25px 20px;
+      background: var(--card-bg);
+      border: 1px solid #e0d6cd;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .grandma-title {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--red-accent);
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .grandma-flex {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .grandma-img {
+      width: 130px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50px 10px 50px 10px;
+    }
+
+    .grandma-dialog {
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    .grandma-dialog p {
+      margin-bottom: 10px;
+    }
+
+    /* Section: Our Gallery Carousel */
+    .gallery-section {
+      padding: 20px;
+    }
+
+    .gallery-card {
+      background: white;
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      border: 1px solid #eaeaea;
+    }
+
+    .gallery-main-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .dots-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #ddd;
+      border-radius: 50%;
+    }
+
+    .dot.active {
+      background: var(--red-accent);
+      width: 18px;
+      border-radius: 10px;
+    }
+
+    /* Cutouts Meme Floating Section */
+    .memes-floating-container {
+      position: relative;
+      height: 180px;
+      margin: 20px 0;
+    }
+
+    .will-smith-cutout {
+      position: absolute;
+      left: 15px;
+      bottom: 10px;
+      width: 110px;
+    }
+
+    .vinyl-mini {
+      position: absolute;
+      top: 10px;
+      right: 70px;
+      width: 45px;
+      animation: spin 4s linear infinite;
+    }
+
+    .disco-ball {
+      position: absolute;
+      top: 5px;
+      right: 120px;
+      width: 35px;
+    }
+
+    .cat-party {
+      position: absolute;
+      right: 20px;
+      bottom: 25px;
+      width: 65px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Section: Happy Birthday Big Text */
+    .big-wishes-text {
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    .big-wishes-text h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--red-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-text-italic {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    .stickers-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .stickers-row img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    /* Footer / Promo section */
+    .footer-promo {
+      margin: 30px 20px 0;
+      background: #111;
+      color: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer-promo h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .footer-promo p {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .tg-handle {
+      display: inline-block;
+      background: var(--red-accent);
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-
-
 <body>
 
-<div class="page">
-
-
-<div class="floating-balloon bal1"></div>
-<div class="floating-balloon bal2"></div>
-<div class="floating-balloon bal3"></div>
-<div class="floating-balloon bal4"></div>
-<div class="floating-balloon bal5"></div>
-
-
-<div
-class="sparkles"
-id="sparkles"
-></div>
-
-
-<!-- =====================
-     HERO
-===================== -->
-
-<section class="hero">
-
-<div class="wrap">
-
-
-<div class="topbar reveal">
-
-<div class="brand">
-
-<span class="brand-dot"></span>
-
-birthday story
-
-</div>
-
-
-<div class="badge">
-
-18 років ✦ особливий день
-
-</div>
-
-</div>
-
-
-
-<div class="hero-grid">
-
-
-<div class="hero-copy reveal">
-
-
-<div class="overline">
-
-сьогодні твій день
-
-</div>
-
-
-<h1 class="title">
-
-З Днем
-
-<br>
-
-<span class="script">
-
-народження!
-
-</span>
-
-</h1>
-
-
-<p class="subtitle">
-
-Нехай сьогодні навколо буде
-багато усмішок,
-квітів,
-красивих слів,
-фотографій,
-теплих обіймів
-і моментів,
-які хочеться
-запам'ятати назавжди.
-
-</p>
-
-
-<div class="chips">
-
-
-<div class="chip">
-
-🎈 18 років
-
-</div>
-
-
-<div class="chip">
-
-🕶️ святковий настрій
-
-</div>
-
-
-<div class="chip">
-
-🎞️ фотоплівка
-
-</div>
-
-
-<div class="chip">
-
-✨ Pinterest vibe
-
-</div>
-
-
-</div>
-
-
-
-<div class="editorial reveal">
-
-
-<div class="card editorial-left">
-
-
-<span class="note">
-
-для особливого дня
-
-</span>
-
-
-<h2>
-
-Нехай цей день
-
-<br>
-
-буде дуже
-
-<br>
-
-красивим
-
-</h2>
-
-
-<p>
-
-Вісімнадцять —
-це про свободу,
-нові мрії,
-сміливість бути собою
-і той особливий вік,
-коли попереду
-цілий світ.
-
-</p>
-
-
-<div class="list">
-
-
-<div class="list-item">
-
-<div class="emoji">
-
-💖
-
-</div>
-
-<div>
-
-<b>
-
-Щасливих моментів
-
-</b>
-
-<span>
-
-Більше сміху,
-теплих обіймів
-і людей,
-поруч з якими затишно.
-
-</span>
-
-</div>
-
-</div>
-
-
-<div class="list-item">
-
-<div class="emoji">
-
-🌷
-
-</div>
-
-<div>
-
-<b>
-
-Ніжності та краси
-
-</b>
-
-<span>
-
-Нехай кожен день
-буде легким,
-естетичним
-і по-особливому твоїм.
-
-</span>
-
-</div>
-
-</div>
-
-
-<div class="list-item">
-
-<div class="emoji">
-
-⭐
-
-</div>
-
-<div>
-
-<b>
-
-Мрій без меж
-
-</b>
-
-<span>
-
-Іди за своїм світлом
-і не бійся
-бажати великого.
-
-</span>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-
-<div class="card editorial-right">
-
-<div class="editorial-photo">
-
-<img
-src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1200"
-alt="Дівчина святкує 18 років"
->
-
-
-<div class="tilt">
-
-<div class="small">
-
-birthday mood
-
-</div>
-
-<strong>
-
-Кульки,
-торт,
-красиві фото
-та найкращий настрій
-
-</strong>
-
-<p>
-
-Сьогодні можна бути
-найяскравішою
-версією себе.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="hero-card reveal">
-
-
-<span class="mini-tag">
-
-головна героїня ✦
-
-</span>
-
-
-<img
-src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=1200"
-alt="Дівчина у сонцезахисних окулярах з кульками 18"
->
-
-
-<div class="hero-glass">
-
-<strong>
-
-Її день.
-Її стиль.
-Її 18.
-
-</strong>
-
-<span>
-
-Красива,
-яскрава,
-усміхнена —
-саме так
-починається це свято.
-
-</span>
-
-</div>
-
-
-<div class="sticker one">
-
-happy
-
-<br>
-
-birthday
-
-<br>
-
-girlie
-
-</div>
-
-
-<div class="sticker two">
-
-сьогодні можна
-все ✦
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================
-     ФОТОПЛЕНКА
-===================== -->
-
-<section class="section film-section">
-
-<div class="wrap">
-
-
-<div class="heading-center reveal">
-
-<div class="eyebrow">
-
-спогади у кадрах
-
-</div>
-
-<h2>
-
-Святкова
-
-<span class="script2">
-
-фотоплівка
-
-</span>
-
-</h2>
-
-</div>
-
-
-
-<div class="film reveal">
-
-<div class="film-strip">
-
-
-<div class="film-frame">
-
-<div class="inner">
-
-<img
-src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-<div class="frame-cap">
-
-Стиль,
-окуляри
-та великі кульки «18».
-
-</div>
-
-</div>
-
-
-
-<div class="film-frame">
-
-<div class="inner">
-
-<img
-src="https://images.pexels.com/photos/19460478/pexels-photo-19460478.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-<div class="frame-cap">
-
-Свічки,
-торт
-і трохи кіношного настрою.
-
-</div>
-
-</div>
-
-
-
-<div class="film-frame">
-
-<div class="inner">
-
-<img
-src="https://images.pexels.com/photos/16359061/pexels-photo-16359061.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-<div class="frame-cap">
-
-Грайливість,
-характер
-і легкість.
-
-</div>
-
-</div>
-
-
-
-<div class="film-frame">
-
-<div class="inner">
-
-<img
-src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-<div class="frame-cap">
-
-Поруч ті,
-з ким хочеться святкувати.
-
-</div>
-
-</div>
-
-
-
-<div class="film-frame">
-
-<div class="inner">
-
-<img
-src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-<div class="frame-cap">
-
-Довгі фото
-та справжній
-Pinterest mood.
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================
-     PINTEREST КОЛЛАЖ
-===================== -->
-
-<section class="section">
-
-<div class="wrap">
-
-
-<div class="collage reveal">
-
-
-<article class="pin tall">
-
-<img
-src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1000"
-alt=""
->
-
-<h3>
-
-18 —
-це початок
-чогось прекрасного
-
-</h3>
-
-<p>
-
-Нехай у серці
-буде спокій,
-а в очах —
-вогники мрій,
-натхнення
-та щирої радості.
-
-</p>
-
-</article>
-
-
-
-<article class="pin">
-
-<img
-src="https://images.pexels.com/photos/25003958/pexels-photo-25003958.jpeg?auto=compress&cs=tinysrgb&w=1000"
-alt=""
->
-
-<h3>
-
-Святковий вайб
-
-</h3>
-
-<p>
-
-Кульки,
-красивий декор,
-ніжні кольори
-і атмосфера,
-від якої тепло.
-
-</p>
-
-</article>
-
-
-
-<article class="pin short">
-
-<img
-src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=1000"
-alt=""
->
-
-<h3>
-
-Поруч —
-найкращі люди
-
-</h3>
-
-<p>
-
-Нехай цей рік
-буде наповнений
-дружбою,
-підтримкою
-і щасливими зустрічами.
-
-</p>
-
-</article>
-
-
-</div>
-
-
-
-<div class="quote-block reveal">
-
-
-<div>
-
-<h3>
-
-Для тебе —
-найтепліші побажання
-
-</h3>
-
-<p>
-
-Нехай у 18 років
-життя дарує
-красиві емоції,
-сміливі мрії,
-натхнення,
-любов
-і моменти,
-які хочеться згадувати
-з усмішкою.
-
-</p>
-
-</div>
-
-
-
-<div class="quote-card">
-
-<div class="caption">
-
-маленький список
-великого щастя
-
-</div>
-
-<ul>
-
-
-<li>
-
-<span>
-
-♡
-
-</span>
-
-<span>
-
-щоб серце
-завжди вибирало
-світло,
-добро
-й любов
-
-</span>
-
-</li>
-
-
-<li>
-
-<span>
-
-✦
-
-</span>
-
-<span>
-
-щоб бажання
-збувалися красиво,
-а мрії
-росли разом з тобою
-
-</span>
-
-</li>
-
-
-<li>
-
-<span>
-
-🎀
-
-</span>
-
-<span>
-
-щоб кожен день
-приносив
-натхнення
-
-</span>
-
-</li>
-
-
-<li>
-
-<span>
-
-🌟
-
-</span>
-
-<span>
-
-щоб ти
-завжди відчувала себе
-особливою
-і щасливою
-
-</span>
-
-</li>
-
-
-</ul>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================
-     ГАЛЕРЕЯ
-===================== -->
-
-<section class="section gallery-wrap">
-
-<div class="wrap">
-
-
-<div class="heading-center reveal">
-
-<div class="eyebrow">
-
-велика галерея
-
-</div>
-
-<h2>
-
-Ще більше
-
-<span class="script2">
-
-краси
-
-</span>
-
-</h2>
-
-</div>
-
-
-
-<div class="gallery reveal">
-
-
-<div
-class="gallery-main"
-style="position:relative;"
->
-
-<img
-src="https://images.pexels.com/photos/16359056/pexels-photo-16359056.jpeg?auto=compress&cs=tinysrgb&w=1200"
-alt=""
->
-
-<div class="overlay-label">
-
-Нехай попереду
-буде багато
-красивих доріг,
-сміливих рішень
-і днів,
-коли хочеться сказати:
-
-«Я щаслива».
-
-</div>
-
-</div>
-
-
-
-<div class="gallery-side">
-
-
-<div class="cardimg">
-
-<img
-src="https://images.pexels.com/photos/16359054/pexels-photo-16359054.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-
-
-<div class="cardimg">
-
-<img
-src="https://images.pexels.com/photos/19460478/pexels-photo-19460478.jpeg?auto=compress&cs=tinysrgb&w=900"
-alt=""
->
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="wishes-grid reveal">
-
-
-<div class="wish">
-
-<div class="ico">
-
-💗
-
-</div>
-
-<h4>
-
-Щастя
-
-</h4>
-
-<p>
-
-Щоб його
-було багато,
-щиро
-й по-справжньому.
-
-</p>
-
-</div>
-
-
-
-<div class="wish">
-
-<div class="ico">
-
-✨
-
-</div>
-
-<h4>
-
-Натхнення
-
-</h4>
-
-<p>
-
-Для нових мрій,
-ідей
-та улюблених справ.
-
-</p>
-
-</div>
-
-
-
-<div class="wish">
-
-<div class="ico">
-
-🌸
-
-</div>
-
-<h4>
-
-Ніжність
-
-</h4>
-
-<p>
-
-До себе,
-свого шляху
-та всього,
-що любиш.
-
-</p>
-
-</div>
-
-
-
-<div class="wish">
-
-<div class="ico">
-
-🎉
-
-</div>
-
-<h4>
-
-Святковий настрій
-
-</h4>
-
-<p>
-
-Не лише сьогодні,
-а й у кожному
-новому дні.
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================
-     ФИНАЛ
-===================== -->
-
-<section class="section">
-
-<div class="wrap">
-
-
-<div class="finale reveal">
-
-
-<div class="finale-grid">
-
-
-<div class="finale-photo">
-
-<img
-src="https://images.pexels.com/photos/6818627/pexels-photo-6818627.jpeg?auto=compress&cs=tinysrgb&w=1200"
-alt=""
->
-
-</div>
-
-
-
-<div class="finale-copy">
-
-
-<div class="eyebrow">
-
-фінальний акорд
-
-</div>
-
-
-<h2>
-
-Нехай твої 18
-
-<br>
-
-будуть незабутніми
-
-</h2>
-
-
-<p>
-
-Бажаю,
-щоб цей день
-був наповнений
-компліментами,
-квітами,
-теплом,
-сміхом,
-красивими фото,
-обіймами
-та відчуттям,
-що попереду —
-дуже щаслива історія.
-
-</p>
-
-
-
-<div class="pill-row">
-
-
-<span class="pill">
-
-🎈 легкість
-
-</span>
-
-
-<span class="pill">
-
-🌷 краса
-
-</span>
-
-
-<span class="pill">
-
-💌 любов
-
-</span>
-
-
-<span class="pill">
-
-⭐ мрії
-
-</span>
-
-
-<span class="pill">
-
-🕊️ свобода
-
-</span>
-
-
-</div>
-
-
-
-<button
-class="cta"
-type="button"
-onclick="makeMagic()"
->
-
-Натисни для святкової магії ✨
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-<div class="footer">
-
-З любов'ю
-для особливого
-18-річчя ♡
-
-</div>
-
-
-</div>
-
-</section>
-
-
-</div>
-
-
-<script>
-
-
-/* =========================
-   ПОЯВЛЕНИЕ БЛОКОВ
-========================= */
-
-const observer =
-new IntersectionObserver(
-
-(entries) => {
-
-entries.forEach(
-(entry, i) => {
-
-if(entry.isIntersecting){
-
-setTimeout(
-() => {
-
-entry.target
-.classList
-.add('visible');
-
-},
-i * 60
-);
-
-observer
-.unobserve(
-entry.target
-);
-
-}
-
-});
-
-},
-
-{
-threshold:.12
-}
-
-);
-
-
-document
-.querySelectorAll('.reveal')
-.forEach(
-el => observer.observe(el)
-);
-
-
-/* =========================
-   ФЕЙЕРВЕРК И МАГИЯ
-========================= */
-
-const sparkleLayer =
-document.getElementById(
-'sparkles'
-);
-
-
-function makeMagic(){
-
-
-const icons = [
-
-'♡',
-'♥',
-'✦',
-'✧',
-'✨',
-'🎀',
-'💖',
-'🌸'
-
-];
-
-
-const colors = [
-
-'#ff4f91',
-'#ff8fb3',
-'#ffd166',
-'#e7a84b',
-'#ffffff',
-'#f6bfd1',
-'#d94c7d'
-
-];
-
-
-
-/* сердечки и блестки */
-
-for(
-let i = 0;
-i < 60;
-i++
-){
-
-const piece =
-document.createElement(
-'span'
-);
-
-piece.className =
-'magic-piece';
-
-
-piece.textContent =
-
-icons[
-Math.floor(
-Math.random()
-*
-icons.length
-)
-];
-
-
-const x =
-
-(
-Math.random() - .5
-)
-
-*
-
-window.innerWidth
-
-*
-
-.95;
-
-
-const y =
-
--150
-
--
-
-Math.random()
-
-*
-
-window.innerHeight
-
-*
-
-.72;
-
-
-const scale =
-
-.6
-
-+
-
-Math.random()
-
-*
-
-1.5;
-
-
-const rotate =
-
-(
-Math.random()
-*
-900
--
-450
-)
-
-+
-'deg';
-
-
-piece.style.left =
-
-(
-35
-+
-Math.random()
-*
-30
-)
-
-+
-'%';
-
-
-piece.style.top =
-
-(
-65
-+
-Math.random()
-*
-12
-)
-
-+
-'%';
-
-
-piece.style.fontSize =
-
-(
-16
-+
-Math.random()
-*
-28
-)
-
-+
-'px';
-
-
-piece.style.color =
-
-colors[
-Math.floor(
-Math.random()
-*
-colors.length
-)
-];
-
-
-piece.style.setProperty(
-'--x',
-x + 'px'
-);
-
-
-piece.style.setProperty(
-'--y',
-y + 'px'
-);
-
-
-piece.style.setProperty(
-'--scale',
-scale
-);
-
-
-piece.style.setProperty(
-'--rotate',
-rotate
-);
-
-
-piece.style.animationDelay =
-
-Math.random()
-*
-.25
-+
-'s';
-
-
-sparkleLayer
-.appendChild(
-piece
-);
-
-
-setTimeout(
-
-() =>
-piece.remove(),
-
-1900
-
-);
-
-
-}
-
-
-
-/* функция одного фейерверка */
-
-function firework(
-x,
-y
-){
-
-for(
-let i = 0;
-i < 40;
-i++
-){
-
-const dot =
-
-document.createElement(
-'span'
-);
-
-
-dot.className =
-
-'firework-dot';
-
-
-const angle =
-
-Math.PI
-*
-2
-*
-i
-/
-40;
-
-
-const distance =
-
-70
-+
-Math.random()
-*
-125;
-
-
-const fx =
-
-Math.cos(angle)
-*
-distance;
-
-
-const fy =
-
-Math.sin(angle)
-*
-distance;
-
-
-dot.style.left =
-
-x + 'px';
-
-
-dot.style.top =
-
-y + 'px';
-
-
-const randomColor =
-
-colors[
-Math.floor(
-Math.random()
-*
-colors.length
-)
-];
-
-
-dot.style.background =
-
-randomColor;
-
-
-dot.style.boxShadow =
-
-'0 0 15px '
-+
-randomColor;
-
-
-dot.style.setProperty(
-
-'--fx',
-
-fx + 'px'
-
-);
-
-
-dot.style.setProperty(
-
-'--fy',
-
-fy + 'px'
-
-);
-
-
-sparkleLayer
-.appendChild(
-dot
-);
-
-
-setTimeout(
-
-() =>
-dot.remove(),
-
-1400
-
-);
-
-}
-
-}
-
-
-/* первый фейерверк */
-
-firework(
-
-window.innerWidth
-*
-.23,
-
-window.innerHeight
-*
-.32
-
-);
-
-
-/* второй */
-
-setTimeout(
-() => {
-
-firework(
-
-window.innerWidth
-*
-.75,
-
-window.innerHeight
-*
-.27
-
-);
-
-},
-240
-);
-
-
-/* третий */
-
-setTimeout(
-() => {
-
-firework(
-
-window.innerWidth
-*
-.5,
-
-window.innerHeight
-*
-.46
-
-);
-
-},
-480
-);
-
-
-/* четвертый маленький */
-
-setTimeout(
-() => {
-
-firework(
-
-window.innerWidth
-*
-.82,
-
-window.innerHeight
-*
-.55
-
-);
-
-},
-720
-);
-
-
-}
-
-</script>
+  <div class="canvas-container">
+    
+    <!-- Running Marquee Banner -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ • ЛЮБИМО ТЕБЕ •
+      </div>
+    </div>
+
+    <!-- Hero Cutout Section -->
+    <section class="hero-section">
+      <img src="https://img.icons8.com/emoji/96/red-heart-emoji.png" class="top-heart" alt="Heart">
+      
+      <div class="curved-title">з днем народження</div>
+      
+      <div class="hero-cutout-wrapper">
+        <div class="text-sticker-left">головна</div>
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" class="hero-cutout-img" alt="Маша">
+        <div class="text-sticker-right">красуня</div>
+      </div>
+    </section>
+
+    <!-- Action Button -->
+    <div class="btn-container">
+      <button class="red-btn" onclick="alert('Машка, ти найкраща! ✨💖')">ТИКНИ НА МЕНЕ</button>
+    </div>
+
+    <!-- Wishes Telegram Bubble Section -->
+    <section class="wishes-section">
+      <div class="section-header">
+        ЖЕЛАЕМ ТЕБЕ... <img src="https://img.icons8.com/emoji/48/red-heart-emoji.png" style="width:20px;" alt="heart">
+      </div>
+      
+      <div class="tg-bubble">
+        <span class="tg-pushpin">📌</span>
+        Щастя, здоров'я, грошей побільше, щирого кохання, вірних друзів, кар'єрного росту, люблячих людей навколо тебе, здійснення твоїх мрій та бажань, цілеспрямованості, упертості, сили духу! ✨🌸
+        <div class="tg-time">
+          00:31 <img src="https://img.icons8.com/emoji/48/sparkles-emoji.png" class="glitter-heart" alt="sparkle">
+        </div>
+      </div>
+    </section>
+
+    <!-- Rich Grandma Meme Section -->
+    <section class="grandma-section">
+      <div class="grandma-title">ЩОБ У СТАРОСТІ ЦЕ БУЛА ТИ! 💰👵</div>
+      <div class="grandma-flex">
+        <img src="https://images.unsplash.com/photo-1581579438747-1dc8d1e2899f?w=400&q=80" class="grandma-img" alt="Багата бабуся">
+        <div class="grandma-dialog">
+          <p>Спочатку я скажу дитині: <i>"Виростеш — зрозумієш!"</i></p>
+          <p>Потім подумаю: <i>"Пробач, на самому ділі ні!"</i> 😂💸</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Gallery Section -->
+    <section class="gallery-section">
+      <div class="section-header">
+        НАША ГАЛЕРЕЯ <img src="https://img.icons8.com/emoji/48/red-heart-emoji.png" style="width:20px;" alt="heart">
+      </div>
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80" class="gallery-main-img" alt="Фото з галереї">
+        <div class="dots-indicator">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Cutouts Memes Section -->
+    <div class="memes-floating-container">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" class="will-smith-cutout" style="border-radius: 50%; height: 110px; object-fit: cover;" alt="Dancing cutout">
+      <img src="https://cdn-icons-png.flaticon.com/512/126/126501.png" class="vinyl-mini" alt="Vinyl">
+      <img src="https://cdn-icons-png.flaticon.com/512/3208/3208727.png" class="disco-ball" alt="Disco ball">
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&q=80" class="cat-party" style="border-radius: 50%; height: 65px; object-fit: cover;" alt="Cat">
+    </div>
+
+    <!-- Big Birthday Wishes Text -->
+    <section class="big-wishes-text">
+      <h2>З ТВОЇМ ДНЕМ, ДОРОГА! 🥳🎈</h2>
+      <div class="sub-text-italic">P.S. Ну що, гуляємо сьогодні? ;)</div>
+      
+      <div class="stickers-row">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=200&q=80" style="border-radius:50%;" alt="Dog">
+        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=200&q=80" style="border-radius:50%;" alt="Cake">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=200&q=80" style="border-radius:50%;" alt="Gift">
+      </div>
+    </section>
+
+    <!-- Footer Promo / CTA -->
+    <footer class="footer-promo">
+      <h4>Привітай своїх близьких оригінально! ✨</h4>
+      <p>Створи власний сайт-подарунок зі знижкою 50 грн за промокодом <b>kvit-50</b>!</p>
+      <a href="https://kvisite.com" target="_blank" class="tg-handle">Замовити на kvisite 🚀</a>
+    </footer>
+
+  </div>
 
 </body>
 </html>
